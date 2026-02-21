@@ -104,8 +104,8 @@
 
     .page-wrapper>section {
       min-height: 80vh;
-      display: flex;
-      flex-direction: column;
+      /* display: flex; */
+      /* flex-direction: column; */
       justify-content: center;
     }
 
@@ -467,6 +467,13 @@
       background: var(--gray-200);
       border-radius: 12px;
       margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .problem-card-image video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .problem-card h3 {
@@ -488,6 +495,7 @@
     /* ===== CORE HR ===== */
     .core-hr {
       /* margin-top: 100px; */
+      flex-direction: row;
       text-align: center;
       align-content: center;
       padding: 80px 60px 100px;
@@ -499,7 +507,6 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
-      flex-direction: row !important;
     }
 
     /* ===== VERTICAL LOGO SCROLLER ===== */
@@ -837,17 +844,72 @@
       line-height: 1.6;
     }
 
-    .cards-grid-top {
+    .feature-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
-    .cards-grid-bottom {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 20px;
+    .feature-row:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Odd rows: feature on left (1.5fr), quote on right (1fr) */
+    .feature-row:nth-of-type(odd) {
+      grid-template-columns: 1fr 1.5fr;
+    }
+
+    /* Even rows: quote on left (1fr), feature on right (1.5fr) */
+    .feature-row:nth-of-type(even) {
+      grid-template-columns: 1.5fr 1fr;
+    }
+
+    /* Quote card styling */
+    .quote-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .quote-card blockquote {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #1a1a1a;
+      margin: 0 0 24px 0;
+      font: var(--font-display);
+      font-style: italic;
+    }
+
+    .quote-card .quote-attribution {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .quote-card .quote-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .quote-card .quote-logo-placeholder {
+      width: 32px;
+      height: 32px;
+      background: var(--gray-200);
+      border-radius: 6px;
+    }
+
+    .quote-card .quote-author {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .quote-card .quote-author strong {
+      color: #1a1a1a;
+      display: block;
     }
 
     .feature-card {
@@ -862,7 +924,7 @@
     }
 
     .feature-card:hover {
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
 
     .card-visual {
@@ -1173,6 +1235,91 @@
       color: var(--black);
       width: 28px;
       text-align: right;
+    }
+
+    /* Device Protection Report card */
+    .card-device-report {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      width: 100%;
+      height: 100%;
+    }
+
+    .card-device-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .card-device-header span:first-child {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .card-device-header span:last-child {
+      font-size: 11px;
+      color: var(--gray-500);
+      font-weight: 400;
+    }
+
+    .device-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+    }
+
+    .device-table thead tr {
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .device-table th {
+      text-align: left;
+      padding: 6px 4px;
+      font-weight: 600;
+      color: var(--gray-500);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .device-table td {
+      padding: 8px 4px;
+      color: var(--gray-600);
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .device-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .incident-icon {
+      margin-right: 4px;
+    }
+
+    .severity-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .severity-high {
+      background: var(--brand_red-20);
+      color: var(--brand_red-100);
+    }
+
+    .severity-medium {
+      background: #FEF3C7;
+      color: #D97706;
+    }
+
+    .severity-low {
+      background: var(--brand_green-20);
+      color: var(--brand_green-100);
     }
 
     /* Employee data card */
@@ -1627,18 +1774,19 @@
     }
 
     .testimonial-avatar {
-      width: 56px;
+      width: 80px;
       height: 56px;
-      border-radius: 14px;
+      border-radius: 10px;
       overflow: hidden;
       margin: 0 auto 14px;
-      background: var(--gray-200);
+      background: #fff;
+      padding: 8px;
     }
 
     .testimonial-avatar img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .testimonial-card h4 {
@@ -1867,6 +2015,11 @@
         margin-bottom: 40px;
       }
 
+      .problem-section {
+        padding: 60px 20px;
+        text-align: center;
+      }
+
       .problem-cards {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1884,12 +2037,16 @@
         padding-right: 20px;
       }
 
-      .cards-grid-top {
-        grid-template-columns: 1fr;
+      .feature-row {
+        grid-template-columns: 1fr !important;
       }
 
-      .cards-grid-bottom {
-        grid-template-columns: 1fr;
+      .feature-row .quote-card {
+        order: 2;
+      }
+
+      .feature-row .feature-card {
+        order: 1;
       }
 
       .footer {
@@ -1968,22 +2125,37 @@
       }
 
       .core-hr .content-z {
+        display: block;
         order: 1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
       }
 
-      /* Hide 2 of the 4 scrollers on mobile */
-      .core-hr>.logo-scroller:nth-of-type(1),
-      .core-hr>.logo-scroller:nth-of-type(4) {
+      /* Hide all logo scrollers by default on mobile, then show specific ones */
+      .core-hr>.logo-scroller {
         display: none;
       }
 
-      /* Show and style the remaining 2 scrollers */
-      .logo-scroller {
+      /* Show 1st scroller (scroll-up for left animation) and 4th scroller (scroll-down for right animation) */
+      .core-hr>.logo-scroller:nth-child(1) {
         display: block;
         order: 2;
-        width: 100%;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
         height: auto;
         overflow: hidden;
+        position: relative;
+      }
+
+      .core-hr>.logo-scroller:nth-child(4) {
+        display: block;
+        order: 3;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        height: auto;
+        overflow: hidden;
+        position: relative;
       }
 
       .logo-scroller::before,
@@ -1992,9 +2164,11 @@
       }
 
       .logo-scroll-track {
+        display: flex;
         flex-direction: row;
-        gap: 16px;
-        padding: 10px 0;
+        gap: 20px;
+        padding: 12px 0;
+        width: max-content;
       }
 
       .logo-scroll-track.scroll-up,
@@ -2003,14 +2177,14 @@
       }
 
       .logo-scroll-track.scroll-up {
-        animation: scrollLeft 20s linear infinite;
+        animation: scrollLeftMobile 25s linear infinite;
       }
 
       .logo-scroll-track.scroll-down {
-        animation: scrollRight 20s linear infinite;
+        animation: scrollRightMobile 25s linear infinite;
       }
 
-      @keyframes scrollLeft {
+      @keyframes scrollLeftMobile {
         0% {
           transform: translateX(0);
         }
@@ -2020,7 +2194,7 @@
         }
       }
 
-      @keyframes scrollRight {
+      @keyframes scrollRightMobile {
         0% {
           transform: translateX(-50%);
         }
@@ -2031,14 +2205,14 @@
       }
 
       .scroll-logo {
-        width: 80px;
-        height: 55px;
+        width: 90px;
+        height: 60px;
         flex-shrink: 0;
       }
 
       .scroll-logo img {
-        width: 70px;
-        height: 32px;
+        width: 80px;
+        height: 36px;
       }
     }
   </style>
@@ -2247,19 +2421,31 @@
       </div>
       <div class="problem-cards">
         <div class="problem-card">
-          <div class="problem-card-image"></div>
+          <div class="problem-card-image">
+            <video autoplay muted loop playsinline>
+              <source src="images/threat.mp4" type="video/mp4">
+            </video>
+          </div>
           <h3>You know the threats — and you've almost been hit</h3>
           <p>Hackers aren't just after big companies. 43% of cyberattacks target small businesses — because they're
             easier to hit. "We're too small" is no longer a defence.</p>
         </div>
         <div class="problem-card">
-          <div class="problem-card-image"></div>
+          <div class="problem-card-image">
+            <video autoplay muted loop playsinline>
+              <source src="images/regulator.mp4" type="video/mp4">
+            </video>
+          </div>
           <h3>Regulators and customers demand compliance</h3>
           <p>Your customers, insurers, and government frameworks now require documented cybersecurity measures. No
             compliance means no business.</p>
         </div>
         <div class="problem-card">
-          <div class="problem-card-image"></div>
+          <div class="problem-card-image">
+            <video autoplay muted loop playsinline>
+              <source src="images/smallbusiness.mp4" type="video/mp4">
+            </video>
+          </div>
           <h3>No time, budget, or technical know-how</h3>
           <p>Hiring a cybersecurity expert costs $80–150k/year. And without a cyber nerd on your team, you have no idea
             where to start.</p>
@@ -2506,55 +2692,71 @@
           24/7.</p>
       </div>
 
-      <div class="cards-grid-top">
+      <!-- Row 1: Malware Protection | Quote -->
+      <div class="feature-row">
         <div class="feature-card animate-on-scroll">
           <div class="card-visual">
-            <div class="card-attendance">
-              <div class="card-attendance-header"><span>Malware Scan Report</span><span>Daily ▾</span></div>
-              <div class="chart-bars">
-                <div class="chart-row"><span>Mon</span>
-                  <div class="bars">
-                    <div class="bar bar-purple" style="height:60%"></div>
-                    <div class="bar bar-red" style="height:80%"></div>
-                    <div class="bar bar-light" style="height:40%"></div>
-                  </div>
-                </div>
-                <div class="chart-row"><span>Tue</span>
-                  <div class="bars">
-                    <div class="bar bar-purple" style="height:75%"></div>
-                    <div class="bar bar-red" style="height:55%"></div>
-                    <div class="bar bar-light" style="height:65%"></div>
-                  </div>
-                </div>
-                <div class="chart-row"><span>Wed</span>
-                  <div class="bars">
-                    <div class="bar bar-purple" style="height:50%"></div>
-                    <div class="bar bar-red" style="height:70%"></div>
-                    <div class="bar bar-light" style="height:30%"></div>
-                  </div>
-                </div>
-                <div class="chart-row"><span>Thu</span>
-                  <div class="bars">
-                    <div class="bar bar-purple" style="height:65%"></div>
-                    <div class="bar bar-red" style="height:45%"></div>
-                    <div class="bar bar-light" style="height:55%"></div>
-                  </div>
-                </div>
-                <div class="chart-row"><span>Fri</span>
-                  <div class="bars">
-                    <div class="bar bar-purple" style="height:40%"></div>
-                    <div class="bar bar-red" style="height:60%"></div>
-                    <div class="bar bar-light" style="height:75%"></div>
-                  </div>
-                </div>
-              </div>
+            <div class="card-device-report">
+              <div class="card-device-header"><span>Device Protection Report</span><span>This Week</span></div>
+              <table class="device-table">
+                <thead>
+                  <tr>
+                    <th>Incident</th>
+                    <th>Severity</th>
+                    <th>Device</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="incident-icon">🛡️</span> Malware "pirated.exe" blocked</td>
+                    <td><span class="severity-badge severity-medium">Medium</span></td>
+                    <td>Laptop 1</td>
+                  </tr>
+                  <tr>
+                    <td><span class="incident-icon">⚠️</span> Suspicious uploads blocked</td>
+                    <td><span class="severity-badge severity-low">Low</span></td>
+                    <td>Desktop 3</td>
+                  </tr>
+                  <tr>
+                    <td><span class="incident-icon">🛡️</span> Malware "macro.pkg" blocked</td>
+                    <td><span class="severity-badge severity-high">High</span></td>
+                    <td>Laptop 2</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
           <h3>Malware Protection</h3>
-          <p>Use a single cloud system for your employees, candidates and HR processes info.</p>
+          <p>Detect and block malicious files across all your devices automatically.</p>
         </div>
+        <div class="quote-card animate-on-scroll">
+          <blockquote>"StrongKeep’s platform made sense for us and gave us the protection we needed, in one place. Clear
+            guidance, easy deployment, and at a good price point."
+          </blockquote>
+          <div class="quote-attribution">
+            <div class="quote-logo-placeholder"></div>
+            <div class="quote-author">
+              <strong>Vincent</strong>
+              Venture Capital firm
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <div class="feature-card animate-on-scroll" style="transition-delay:0.1s">
+      <!-- Row 2: Quote | Scam Protection -->
+      <div class="feature-row">
+        <div class="quote-card animate-on-scroll">
+          <blockquote>"Phishing emails were our biggest worry. StrongKeep catches what our email filters miss."
+          </blockquote>
+          <div class="quote-attribution">
+            <div class="quote-logo-placeholder"></div>
+            <div class="quote-author">
+              <strong>David Lim</strong>
+              Founder, Orchard Dental Clinic
+            </div>
+          </div>
+        </div>
+        <div class="feature-card animate-on-scroll">
           <div class="card-visual">
             <div class="card-blocked">
               <div class="card-blocked-header"><span>Blocked Sites</span><span>This Week</span></div>
@@ -2586,8 +2788,11 @@
           <h3>Scam Protection</h3>
           <p>Block malicious websites, phishing attempts, and suspicious domains automatically.</p>
         </div>
+      </div>
 
-        <div class="feature-card animate-on-scroll" style="transition-delay:0.2s">
+      <!-- Row 3: Secure Habits | Quote -->
+      <div class="feature-row">
+        <div class="feature-card animate-on-scroll">
           <div class="card-visual">
             <div class="card-insights">
               <div class="insights-orbit"></div>
@@ -2599,15 +2804,36 @@
               </div>
             </div>
           </div>
-
           <h3>Secure Habits</h3>
           <p>Ensure your staff are well trained on cybersecurity basics and can spot phishing and other threats.</p>
         </div>
+        <div class="quote-card animate-on-scroll">
+          <blockquote>"We built this because small businesses deserve enterprise-grade protection without the
+            complexity."</blockquote>
+          <div class="quote-attribution">
+            <div class="quote-logo-placeholder"></div>
+            <div class="quote-author">
+              <strong>Marcus Wong</strong>
+              Lead Developer, StrongKeep
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="cards-grid-bottom">
+      <!-- Row 4: Quote | Human Risk Control -->
+      <div class="feature-row">
+        <div class="quote-card animate-on-scroll">
+          <blockquote>"Now I can see exactly who needs a reminder about security training. No more guessing."
+          </blockquote>
+          <div class="quote-attribution">
+            <div class="quote-logo-placeholder"></div>
+            <div class="quote-author">
+              <strong>Rachel Tan</strong>
+              HR Director, Integra Partners
+            </div>
+          </div>
+        </div>
         <div class="feature-card card-employee-data animate-on-scroll">
-
           <div class="card-visual">
             <div class="emp-list">
               <div class="emp-list-header"><span>Employees</span><span class="see-all">See all</span></div>
@@ -2656,8 +2882,11 @@
           <h3>Human Risk Control</h3>
           <p>Organisations can see who needs a nudge to reduce the risk they add to you.</p>
         </div>
+      </div>
 
-        <div class="feature-card card-teams animate-on-scroll" style="transition-delay:0.1s">
+      <!-- Row 5: Compliance | Quote -->
+      <div class="feature-row">
+        <div class="feature-card card-teams animate-on-scroll">
           <div class="card-visual">
             <div class="team-circle">
               <div class="team-orbit"></div>
@@ -2688,8 +2917,19 @@
                   alt="Barista at cafe"></div>
             </div>
           </div>
-          <h3> Compliance</h3>
+          <h3>Compliance</h3>
           <p>Quick and painless procurement and regulatory compliance.</p>
+        </div>
+        <div class="quote-card animate-on-scroll">
+          <blockquote>"The guidance / automation provided allows us to put in place policies and collect evidence
+            required painlessly, keeping track of everything in one place."</blockquote>
+          <div class="quote-attribution">
+            <div class="quote-logo-placeholder"></div>
+            <div class="quote-author">
+              <strong>James</strong>
+              IT Manager, HR Organisation
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2774,11 +3014,11 @@
         <div class="testimonial-side right"></div>
         <div class="testimonial-card" id="testimonialCard">
           <div class="testimonial-avatar"><img id="testAvatar"
-              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=120&h=120&fit=crop"
-              alt="Professional at work">
+              src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5192be1a4266e712b82_IHRP.avif"
+              alt="Company logo">
           </div>
-          <h4 id="testName">Sarah Mitchell</h4>
-          <div class="title" id="testTitle">HR Director at Nexa Solutions</div>
+          <h4 id="testName">Michelle</h4>
+          <div class="title" id="testTitle">IHRP</div>
           <div class="stars">
             <svg viewBox="0 0 24 24">
               <polygon
@@ -2802,8 +3042,7 @@
             </svg>
             <span>5.0</span>
           </div>
-          <blockquote id="testQuote">"StrongKeep has streamlined our HR processes, making tasks like onboarding and
-            performance tracking more efficient. "</blockquote>
+          <blockquote id="testQuote">"We were struggling to apply for Cyber Essentials Certification when we met StrongKeep. Their compliance module stood out. The guidance and automation provided allows us to put in place policies and collect evidence required painlessly, keeping track of everything in one place."</blockquote>
         </div>
       </div>
 
@@ -3092,9 +3331,11 @@
 
     // ===== TESTIMONIALS =====
     const testimonials = [
-      { name: 'Sarah Mitchell', title: 'IT Director at Nexa Solutions', quote: '"StrongKeep has streamlined our security processes, making tasks like threat monitoring and compliance tracking more efficient. "', avatar: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=120&h=120&fit=crop' },
-      { name: 'James Carter', title: 'Operations Manager at BrightPath Manufacturing', quote: '"The platform is easy to use, keeps everything secure, and helps our factory floor team stay protected without extra hassle."', avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=120&h=120&fit=crop' },
-      { name: 'Emily Zhao', title: 'Founder at CloudBake Bakery', quote: '"We switched to StrongKeep last year, and it has transformed the way we protect our small business. The peace of mind alone is worth every penny."', avatar: 'https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=120&h=120&fit=crop' }
+      { name: 'Michelle', title: 'IHRP', quote: '"We were struggling to apply for Cyber Essentials Certification when we met StrongKeep. Their compliance module stood out. The guidance and automation provided allows us to put in place policies and collect evidence required painlessly, keeping track of everything in one place."', avatar: 'https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5192be1a4266e712b82_IHRP.avif' },
+      { name: 'Daniel', title: 'ClavystBio', quote: '"We were looking for a simple solution to help us with cyber compliance and insurance. StrongKeep\'s platform made sense for us and gave us what we needed in one place. Clear guidance, easy deployment, and at a good price point. The team was responsive when I needed help."', avatar: 'https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5191a4045010d4db63c_clavystbio.avif' },
+      { name: 'Rachel', title: 'Birds of Paradise', quote: '"We didn\'t have time to think about cyber but it\'s always been a concern especially as we grew. StrongKeep\'s platform made cybersecurity easy for us at Birds of Paradise. We onboarded and we are now protected, taking the stress out of protecting our stores and customer data."', avatar: 'https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5181732983745119630_BoP.webp' },
+      { name: 'Kevin', title: 'Wanderwonder.sg', quote: '"As a small team, cybersecurity always felt out of reach and too complicated. StrongKeep made it simple for Wanderwonder to stay protected without extra workload. Setup was easy and the StrongKeep team was responsive when needed."', avatar: 'https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519be50a9054ee3a8ae_7903352543d7093a7bee9b0b41833b3c_wanderwonder.png' },
+      { name: 'Jason', title: 'NBI Bearings Singapore', quote: '"We knew we needed cyber but didn\'t know where to start. StrongKeep offered everything we needed and helped NBI get our cyber basics in place quickly. It finally made cybersecurity easy, practical, and manageable for a small company like ours."', avatar: 'https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519e5f6be3d2059f907_5e6bf0cc96e9e9bcbe8259b5184e7726_NBI%20Bearings%20Singapore.png' }
     ];
     let testIdx = 0;
 
