@@ -1214,7 +1214,7 @@
     .blocked-bar {
       height: 100%;
       border-radius: 6px;
-      transition: width 0.8s ease;
+      width: 0;
     }
 
     .blocked-bar.bar-red {
@@ -1322,31 +1322,29 @@
       color: var(--brand_green-100);
     }
 
-    /* Employee data card */
-    .card-employee-data .card-visual {
-      height: 220px;
-      display: flex;
-      gap: 12px;
-    }
-
-    .emp-list {
+    /* Human Risk Control card */
+    .card-human-risk {
       background: var(--white);
       border-radius: 12px;
-      padding: 14px;
-      flex: 1;
+      padding: 16px;
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      width: 100%;
+      height: 100%;
     }
 
-    .emp-list-header {
+    .card-human-risk .card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
-      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .card-human-risk .card-header span:first-child {
+      font-size: 8px;
       font-weight: 600;
     }
 
-    .emp-list-header .see-all {
+    .card-human-risk .card-header .see-all {
       font-size: 10px;
       color: var(--gray-400);
       font-weight: 400;
@@ -1355,66 +1353,124 @@
     .dept-tags {
       display: flex;
       gap: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .dept-tag {
       font-size: 9px;
-      padding: 3px 8px;
+      padding: 4px 8px;
       border-radius: 6px;
       background: var(--gray-100);
       font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .dept-tag:hover {
+      background: var(--gray-200);
     }
 
     .dept-tag.active {
-      background: var(--purple);
+      background: var(--brand_blue-100);
       color: white;
     }
 
     .dept-tag .count {
       display: inline-block;
-      padding: 1px 4px;
+      padding: 1px 5px;
       border-radius: 4px;
       background: rgba(255, 255, 255, 0.2);
-      margin-left: 3px;
+      margin-left: 4px;
       font-size: 8px;
     }
 
-    .emp-person {
+    .staff-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .staff-table th {
+      text-align: left;
+      padding: 4px 6px;
+      font-weight: 600;
+      color: var(--gray-500);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .staff-table td {
+      padding: 8px 6px;
+      font-size: 11px;
+      color: var(--gray-600);
+      border-bottom: 1px solid var(--gray-100);
+      vertical-align: middle;
+    }
+
+    .staff-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .staff-name {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 8px;
     }
 
-    .emp-avatar {
-      width: 28px;
-      height: 28px;
+    .staff-avatar {
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
-      background: var(--yellow);
-      overflow: hidden;
-      text-align-last: center;
-      align-content: center;
-    }
-
-    .emp-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-
-    }
-
-    .emp-info {
-      font-size: 11px;
-    }
-
-    .emp-info .name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
       font-weight: 600;
-      font-size: 12px;
+      color: white;
+      flex-shrink: 0;
     }
 
-    .emp-info .role {
-      color: var(--gray-400);
+    .staff-name span {
+      font-weight: 500;
+      color: var(--black);
+    }
+
+    .grade-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .grade-a {
+      background: var(--brand_green-20);
+      color: var(--brand_green-100);
+    }
+
+    .grade-b {
+      background: #FEF3C7;
+      color: #D97706;
+    }
+
+    .grade-c {
+      background: var(--brand_red-20);
+      color: var(--brand_red-100);
+    }
+
+    .status-ok {
+      color: var(--brand_green-100);
+      font-size: 10px;
+    }
+
+    .status-warning {
+      color: #D97706;
+      font-size: 10px;
+    }
+
+    .status-alert {
+      color: var(--brand_red-100);
       font-size: 10px;
     }
 
@@ -1596,41 +1652,187 @@
       left: -2px;
     }
 
+    /* ===== CTA SECTION ===== */
+    .cta {
+      min-height: 300px;
+      margin: 100px 0px;
+      width: 100%;
+      padding: 80px 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(45deg, var(--brand_blue-100) 0%, var(--brand_blue-60) 100%);
+      border-radius: var(--radius);
+      /* margin: 0; */
+    }
+
+    .cta h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -0.8px;
+      color: var(--white);
+      margin: 0 0 16px 0;
+    }
+
+    .cta p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 500px;
+      margin: 0 auto 24px;
+    }
+
+    .cta .btn-hero {
+      background: var(--brand_red-100);
+      color: var(--white);
+    }
+
+    .cta .btn-hero:hover {
+      background: var(--brand_red-80);
+      transform: translateY(-2px);
+      transition: all 0.3s ease;
+    }
+
+    .cta .tiny {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 12px;
+      display: inline-block;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .cta {
+        padding: 60px 24px;
+        min-height: 250px;
+      }
+    }
+
+    /* ===== OBJECTIONS / FAQ ===== */
+    .objections {
+      padding: 80px 50px;
+      text-align: center;
+    }
+
+    .objections h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.8px;
+      margin: 0 0 50px 0;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .objections-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .objection-card {
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: left;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .objection-card h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.3;
+      margin: 0 0 16px 0;
+      color: var(--black);
+    }
+
+    .objection-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--gray-600);
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .objections-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .objections {
+        padding: 60px 24px;
+      }
+    }
+
     /* ===== INTEGRATIONS ===== */
     .integrations {
       padding: 40px 50px 80px;
     }
 
     .integrations-card {
-      background: var(--gray-100);
+      /* background: var(--gray-100); */
       border-radius: var(--radius);
-      padding: 60px 40px 50px;
-      text-align: center;
+      padding: 100px;
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(0, 0, 0, 0.03);
-    }
-
-    .integrations-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      background: var(--white);
-      margin: 0 auto 24px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
       align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-card);
     }
 
-    .integrations h2 {
+    .integrations-text {
+      text-align: left;
+    }
+
+    .integrations-text h2 {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 52px);
+      font-size: clamp(28px, 3.5vw, 44px);
       font-weight: 400;
-      line-height: 1.12;
+      line-height: 1.15;
       letter-spacing: -0.8px;
-      max-width: 560px;
-      margin: 0 auto;
+      margin: 0 0 24px 0;
+    }
+
+    .integrations-text p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--gray-600);
+      margin: 0;
+    }
+
+    .integrations-video {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .integrations-video iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .integrations-card {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+        gap: 30px;
+      }
+
+      .integrations-text {
+        text-align: center;
+      }
     }
 
     .logos-carousel {
@@ -2427,7 +2629,8 @@
             </video>
           </div>
           <h3>You know the threats — and you've almost been hit</h3>
-          <p>Hackers aren't just after big companies. 43% of cyberattacks target small businesses — because they're
+          <p>Hackers aren't just after big companies. 80% of small businesses have experienced a cyber incident —
+            because they're
             easier to hit. "We're too small" is no longer a defence.</p>
         </div>
         <div class="problem-card">
@@ -2570,7 +2773,7 @@
         <h2>Trusted<br>by <i><small>normal</small></i> people</h2>
         <p>Non-technical people in non-technical organisations have deployed StrongKeep <i>in hours</i> and warded off
           cyberattacks.</p>
-        <a href="#" class="btn-purple">Learn more</a>
+        <!-- <a href="#" class="btn-purple">Learn more</a> -->
       </div>
 
       <!-- Right Logo Scroller - Scrolls Down -->
@@ -2764,23 +2967,23 @@
                 <div class="blocked-row">
                   <span class="blocked-label">Malware</span>
                   <div class="blocked-bar-container">
-                    <div class="blocked-bar bar-red" style="width: 100%"></div>
+                    <div class="blocked-bar bar-red" data-width="100"></div>
                   </div>
-                  <span class="blocked-value">71</span>
+                  <span class="blocked-value" data-value="71">0</span>
                 </div>
                 <div class="blocked-row">
                   <span class="blocked-label">Scams / Phishing</span>
                   <div class="blocked-bar-container">
-                    <div class="blocked-bar bar-purple" style="width: 48%"></div>
+                    <div class="blocked-bar bar-purple" data-width="48"></div>
                   </div>
-                  <span class="blocked-value">34</span>
+                  <span class="blocked-value" data-value="34">0</span>
                 </div>
                 <div class="blocked-row">
                   <span class="blocked-label">Suspicious</span>
                   <div class="blocked-bar-container">
-                    <div class="blocked-bar bar-light" style="width: 17%"></div>
+                    <div class="blocked-bar bar-light" data-width="17"></div>
                   </div>
-                  <span class="blocked-value">12</span>
+                  <span class="blocked-value" data-value="12">0</span>
                 </div>
               </div>
             </div>
@@ -2803,6 +3006,21 @@
                 <span id="insightText">Basic Cyber Awareness</span>
               </div>
             </div>
+            <div class="training-chart">
+              <div class="training-header"><span>Training Results</span>
+                <div class="training-tabs"><span class="training-tab">Weekly</span><span
+                    class="training-tab active">Monthly</span></div>
+              </div>
+              <div class="mini-bars">
+                <div class="mini-bar" style="height:40%"></div>
+                <div class="mini-bar" style="height:55%"></div>
+                <div class="mini-bar" style="height:35%"></div>
+                <div class="mini-bar highlight" style="height:65%"><span class="mini-bar-label">46%</span></div>
+                <div class="mini-bar" style="height:50%"></div>
+                <div class="mini-bar" style="height:30%"></div>
+                <div class="mini-bar" style="height:45%"></div>
+              </div>
+            </div>
           </div>
           <h3>Secure Habits</h3>
           <p>Ensure your staff are well trained on cybersecurity basics and can spot phishing and other threats.</p>
@@ -2823,64 +3041,86 @@
       <!-- Row 4: Quote | Human Risk Control -->
       <div class="feature-row">
         <div class="quote-card animate-on-scroll">
-          <blockquote>"Now I can see exactly who needs a reminder about security training. No more guessing."
+          <blockquote>"Most cyber tools use technical jargon to explain risks, which doesn't help SMBs. We built this so
+            StrongKeep users know what to do, and who to nudge."
           </blockquote>
           <div class="quote-attribution">
             <div class="quote-logo-placeholder"></div>
             <div class="quote-author">
-              <strong>Rachel Tan</strong>
-              HR Director, Integra Partners
+              <strong>Vanessa</strong>
+              Designer, StrongKeep
             </div>
           </div>
         </div>
-        <div class="feature-card card-employee-data animate-on-scroll">
+        <div class="feature-card animate-on-scroll">
           <div class="card-visual">
-            <div class="emp-list">
-              <div class="emp-list-header"><span>Employees</span><span class="see-all">See all</span></div>
+            <div class="card-human-risk">
+              <div class="card-header">
+                <span>Employee Risk Overview</span>
+                <span class="see-all">See all</span>
+              </div>
               <div class="dept-tags">
-                <span class="dept-tag active">Project Dept <span class="count">24</span></span>
-                <span class="dept-tag">Sales Dept <span class="count">11</span></span>
+                <span class="dept-tag active">HQ <span class="count">5</span></span>
+                <span class="dept-tag">Sales <span class="count">8</span></span>
+                <span class="dept-tag">Ops <span class="count">13</span></span>
               </div>
-              <div class="emp-person">
-                <div class="emp-avatar" style="background: var(--brand_red-80);">C</div>
-                <div class="emp-info">
-                  <div class="name">Willem Gray</div>
-                  <div class="role">Engineer</div>
-                </div>
-              </div>
-              <div class="emp-person">
-                <div class="emp-avatar" style="background: var(--yellow);">B</div>
-                <div class="emp-info">
-                  <div class="name">Jonathan Ryabell</div>
-                  <div class="role">Senior Engineer</div>
-                </div>
-              </div>
-              <div class="emp-person">
-                <div class="emp-avatar" style="background: var(--brand_green-100);">A</div>
-                <div class="emp-info">
-                  <div class="name">Olivia Keaton</div>
-                  <div class="role">UIUX</div>
-                </div>
-              </div>
-            </div>
-            <div class="training-chart">
-              <div class="training-header"><span>Training Participation</span>
-                <div class="training-tabs"><span class="training-tab">Daily</span><span
-                    class="training-tab">Weekly</span><span class="training-tab active">Monthly</span></div>
-              </div>
-              <div class="mini-bars">
-                <div class="mini-bar" style="height:40%"></div>
-                <div class="mini-bar" style="height:55%"></div>
-                <div class="mini-bar" style="height:35%"></div>
-                <div class="mini-bar highlight" style="height:65%"><span class="mini-bar-label">46%</span></div>
-                <div class="mini-bar" style="height:50%"></div>
-                <div class="mini-bar" style="height:30%"></div>
-                <div class="mini-bar" style="height:45%"></div>
-              </div>
+              <table class="staff-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Grade</th>
+                    <th>Training</th>
+                    <th>Device</th>
+                    <th>Passwords</th>
+                    <th>Recommendation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="staff-name">
+
+                        <span>Peter Parker</span>
+                      </div>
+                    </td>
+                    <td><span class="grade-badge grade-a">A</span></td>
+                    <td>98%</td>
+                    <td>No alerts</td>
+                    <td>No alerts</td>
+                    <td><span class="status-ok">All clear!</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="staff-name">
+
+                        <span>Bruce Wayne</span>
+                      </div>
+                    </td>
+                    <td><span class="grade-badge grade-b">B</span></td>
+                    <td>84%</td>
+                    <td><span class="status-warning">4 blocked sites</span></td>
+                    <td>1 reused password</td>
+                    <td><span class="status-warning">Training: Phishing Sites</span></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="staff-name">
+
+                        <span>Clark Kent</span>
+                      </div>
+                    </td>
+                    <td><span class="grade-badge grade-c">C</span></td>
+                    <td>83%</td>
+                    <td><span class="status-alert">1 malware</span></td>
+                    <td><span class="status-alert">3 weak passwords</span></td>
+                    <td><span class="status-alert">Reduced Access</span></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
           <h3>Human Risk Control</h3>
-          <p>Organisations can see who needs a nudge to reduce the risk they add to you.</p>
+          <p>See at a glance who in your team needs a "nudge" to improve their cyber risk posture.</p>
         </div>
       </div>
 
@@ -2934,73 +3174,60 @@
       </div>
     </section>
 
+
+    <div class="cta">
+      <div>
+        <h2 class="animate-on-scroll">Plans start from $39/month</h2>
+        <p class="animate-on-scroll">Join all the businesses using StrongKeep to protect themselves from
+          cyberattacks.
+        </p>
+        <a href="#" class="btn-hero">Start with a Free Scan</a>
+        <br /><span class="tiny">No credit card. No installation. Just results.</span>
+      </div>
+    </div>
+
+
     <!-- INTEGRATIONS -->
-    <section class="integrations">
+    <div class="integrations">
       <div class="integrations-card animate-on-scroll">
-        <div class="integrations-icon">
-          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#E8503A" stroke-width="2"
-            stroke-linecap="round">
-            <circle cx="12" cy="12" r="3" />
-            <circle cx="19" cy="5" r="2" />
-            <circle cx="5" cy="5" r="2" />
-            <circle cx="19" cy="19" r="2" />
-            <circle cx="5" cy="19" r="2" />
-            <line x1="14" y1="10" x2="17.5" y2="6.5" />
-            <line x1="10" y1="10" x2="6.5" y2="6.5" />
-            <line x1="14" y1="14" x2="17.5" y2="17.5" />
-            <line x1="10" y1="14" x2="6.5" y2="17.5" />
-          </svg>
+        <div class="integrations-text">
+          <h2>We are reinventing cybersecurity for SMBs</h2>
+          <p>We are changing how cybersecurity is delivered, to provide a cost-effective and scalable offering to
+            small and medium-sized businesses (SMBs) that meets their needs and safeguard their businesses from
+            cyberattacks.</p>
         </div>
-        <h2>Integrate with your existing tools in seconds</h2>
-
-        <div class="logos-carousel" id="logosCarousel">
-          <div class="logo-card" data-name="Gmail" data-desc="Email communication">
-            <svg viewBox="0 0 48 48" width="44" height="44">
-              <path fill="#4285F4" d="M6 38V18l18 12 18-12v20a4 4 0 01-4 4H10a4 4 0 01-4-4z" />
-              <path fill="#34A853" d="M42 18L24 30 6 18V10a4 4 0 014-4h28a4 4 0 014 4z" />
-              <path fill="#FBBC04" d="M6 18V10l18 12z" />
-              <path fill="#EA4335" d="M42 18V10L24 22z" />
-            </svg>
-          </div>
-          <div class="logo-card" data-name="Zapier" data-desc="Workflow automation">
-            <svg viewBox="0 0 48 48" width="44" height="44">
-              <path
-                d="M30 24a8.5 8.5 0 01-1.2 4.3l-3.5-3.5V18h-2.6v6.8l-3.5 3.5A8.5 8.5 0 0118 24a8.5 8.5 0 011.2-4.3l3.5 3.5V30h2.6v-6.8l3.5-3.5A8.5 8.5 0 0130 24z"
-                fill="#FF4A00" />
-              <circle cx="24" cy="24" r="12" fill="none" stroke="#FF4A00" stroke-width="2" />
-            </svg>
-          </div>
-          <div class="logo-card" data-name="Google Meet" data-desc="Seamless video meetings">
-            <svg viewBox="0 0 48 48" width="44" height="44">
-              <rect x="8" y="12" width="22" height="24" rx="3" fill="#00832D" />
-              <path d="M30 20l10-7v22l-10-7z" fill="#FBBC04" />
-              <rect x="12" y="16" width="14" height="16" rx="1" fill="#fff" opacity="0.3" />
-            </svg>
-          </div>
-          <div class="logo-card" data-name="Microsoft Outlook" data-desc="Email & schedule management">
-            <svg viewBox="0 0 48 48" width="44" height="44">
-              <rect x="6" y="10" width="20" height="28" rx="2" fill="#0078D4" />
-              <ellipse cx="16" cy="24" rx="6" ry="7" fill="#fff" opacity="0.3" />
-              <path d="M26 14h16v20a2 2 0 01-2 2H26z" fill="#0078D4" opacity="0.7" /><text x="14" y="28" fill="#fff"
-                font-size="14" font-weight="700" text-anchor="middle" font-family="sans-serif">O</text>
-            </svg>
-          </div>
-          <div class="logo-card" data-name="Microsoft Teams" data-desc="Team collaboration">
-            <svg viewBox="0 0 48 48" width="44" height="44">
-              <circle cx="32" cy="14" r="5" fill="#5B5FC7" opacity="0.8" />
-              <rect x="6" y="12" width="24" height="24" rx="3" fill="#5B5FC7" /><text x="18" y="29" fill="#fff"
-                font-size="16" font-weight="700" text-anchor="middle" font-family="sans-serif">T</text>
-              <circle cx="36" cy="18" r="4" fill="#5B5FC7" opacity="0.5" />
-            </svg>
-          </div>
+        <div class="integrations-video">
+          <iframe src="https://www.youtube.com/embed/ULmZ2_sNyG8?rel=0&controls=1&autoplay=1&mute=0&start=0"
+            title="StrongKeep Introduction" allow=" web-share" allowfullscreen data-gtm-yt-inspected-9="true">
+          </iframe>
         </div>
+      </div>
+    </div>
 
-        <div class="logo-label active" id="logoLabel">
-          <h4 id="logoName">Google Meet</h4>
-          <p id="logoDesc">Seamless video meetings</p>
+    <!-- OBJECTIONS / FAQ -->
+    <section class="objections">
+      <h2 class="animate-on-scroll">Still not sure? Here are the questions we get most.</h2>
+      <p class="animate-on-scroll">If you have more questions, feel free to drop us an <a
+          href="mailto:hello@strongkeep.com">email</a>!</p>
+      <div class="objections-grid">
+        <div class="objection-card animate-on-scroll">
+          <h3>"Are we too small to start implementing cybersecurity?"</h3>
+          <p>80% of cyberattacks hit businesses with fewer than 50 employees. Size makes you easier to hit, not safer.
+            StrongKeep was built exactly for businesses like yours.</p>
+        </div>
+        <div class="objection-card animate-on-scroll">
+          <h3>"We already have antivirus. Isn't that enough?"</h3>
+          <p>Antivirus covers one layer. StrongKeep covers seven — including phishing, weak passwords, misconfigured
+            tools, and unpatched software. That's where SMBs actually get breached.</p>
+        </div>
+        <div class="objection-card animate-on-scroll">
+          <h3>"Setting this up sounds complicated."</h3>
+          <p>Most customers are live in under 60 minutes. There is no code to write, no server to configure. If you can
+            use a laptop, you can use StrongKeep.</p>
         </div>
       </div>
     </section>
+
 
     <!-- TESTIMONIALS -->
     <section class="testimonials">
@@ -3042,7 +3269,10 @@
             </svg>
             <span>5.0</span>
           </div>
-          <blockquote id="testQuote">"We were struggling to apply for Cyber Essentials Certification when we met StrongKeep. Their compliance module stood out. The guidance and automation provided allows us to put in place policies and collect evidence required painlessly, keeping track of everything in one place."</blockquote>
+          <blockquote id="testQuote">"We were struggling to apply for Cyber Essentials Certification when we met
+            StrongKeep. Their compliance module stood out. The guidance and automation provided allows us to put in
+            place policies and collect evidence required painlessly, keeping track of everything in one place."
+          </blockquote>
         </div>
       </div>
 
@@ -3176,16 +3406,20 @@
     });
 
     // ===== SCROLL TRIGGERED ANIMATIONS =====
-    document.querySelectorAll('.animate-on-scroll').forEach((el, i) => {
-      gsap.to(el, {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none none"
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      gsap.set(el, { opacity: 0, y: 30 }); // Ensure initial state is set by GSAP
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 85%",
+        once: true,
+        onEnter: () => {
+          gsap.to(el, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out"
+          });
         }
       });
     });
@@ -3259,75 +3493,81 @@
     }, 3000);
 
     // ===== LOGO CAROUSEL =====
-    const logoCards = document.querySelectorAll('.logo-card');
+    // Only run if integrations section exists
     const logoName = document.getElementById('logoName');
     const logoDesc = document.getElementById('logoDesc');
-    const logoLabel = document.getElementById('logoLabel');
-    let activeLogoIdx = 2;
+    if (logoName && logoDesc) {
+      const logoCards = document.querySelectorAll('.logo-card');
+      const logoLabel = document.getElementById('logoLabel');
+      let activeLogoIdx = 2;
 
-    function setActiveLogo(idx, animate = true) {
-      activeLogoIdx = idx;
-      const card = logoCards[idx];
+      function setActiveLogo(idx, animate = true) {
+        activeLogoIdx = idx;
+        const card = logoCards[idx];
 
-      if (animate) {
-        gsap.to(logoLabel, {
-          opacity: 0,
-          y: 10,
-          duration: 0.2,
-          ease: "power2.in",
-          onComplete: () => {
-            logoName.textContent = card.dataset.name;
-            logoDesc.textContent = card.dataset.desc;
-            gsap.to(logoLabel, {
-              opacity: 1,
-              y: 0,
-              duration: 0.3,
-              ease: "power2.out"
-            });
-          }
-        });
-      } else {
-        logoName.textContent = card.dataset.name;
-        logoDesc.textContent = card.dataset.desc;
+        if (animate) {
+          gsap.to(logoLabel, {
+            opacity: 0,
+            y: 10,
+            duration: 0.2,
+            ease: "power2.in",
+            onComplete: () => {
+              logoName.textContent = card.dataset.name;
+              logoDesc.textContent = card.dataset.desc;
+              gsap.to(logoLabel, {
+                opacity: 1,
+                y: 0,
+                duration: 0.3,
+                ease: "power2.out"
+              });
+            }
+          });
+        } else {
+          logoName.textContent = card.dataset.name;
+          logoDesc.textContent = card.dataset.desc;
+        }
       }
-    }
 
-    logoCards.forEach((card, i) => {
-      card.addEventListener('mouseenter', () => {
-        setActiveLogo(i);
-        gsap.to(card, {
-          scale: 1.15,
-          y: -15,
-          rotation: 0,
-          duration: 0.4,
-          ease: "power2.out"
+      logoCards.forEach((card, i) => {
+        card.addEventListener('mouseenter', () => {
+          setActiveLogo(i);
+          gsap.to(card, {
+            scale: 1.15,
+            y: -15,
+            rotation: 0,
+            duration: 0.4,
+            ease: "power2.out"
+          });
+        });
+        card.addEventListener('mouseleave', () => {
+          const rotations = [-12, -6, 0, 6, 12];
+          const yOffsets = [20, -5, -15, -5, 20];
+          gsap.to(card, {
+            scale: i === 2 ? 1.15 : 1,
+            y: yOffsets[i],
+            rotation: rotations[i],
+            duration: 0.4,
+            ease: "power2.out"
+          });
         });
       });
-      card.addEventListener('mouseleave', () => {
-        const rotations = [-12, -6, 0, 6, 12];
-        const yOffsets = [20, -5, -15, -5, 20];
-        gsap.to(card, {
-          scale: i === 2 ? 1.15 : 1,
-          y: yOffsets[i],
-          rotation: rotations[i],
-          duration: 0.4,
-          ease: "power2.out"
-        });
-      });
-    });
 
-    let logoInterval = setInterval(() => {
-      activeLogoIdx = (activeLogoIdx + 1) % logoCards.length;
-      setActiveLogo(activeLogoIdx);
-    }, 3000);
-
-    document.getElementById('logosCarousel').addEventListener('mouseenter', () => clearInterval(logoInterval));
-    document.getElementById('logosCarousel').addEventListener('mouseleave', () => {
-      logoInterval = setInterval(() => {
+      let logoInterval = setInterval(() => {
         activeLogoIdx = (activeLogoIdx + 1) % logoCards.length;
         setActiveLogo(activeLogoIdx);
       }, 3000);
-    });
+
+      const logosCarousel = document.getElementById('logosCarousel');
+      if (logosCarousel) {
+        logosCarousel.addEventListener('mouseenter', () => clearInterval(logoInterval));
+        logosCarousel.addEventListener('mouseleave', () => {
+          logoInterval = setInterval(() => {
+            activeLogoIdx = (activeLogoIdx + 1) % logoCards.length;
+            setActiveLogo(activeLogoIdx);
+          }, 3000);
+        });
+      }
+    } // End of logo carousel if block
 
     // ===== TESTIMONIALS =====
     const testimonials = [
@@ -3652,6 +3892,43 @@
         trigger: '.training-chart',
         start: "top 80%"
       }
+    });
+
+    // ===== BLOCKED SITES BARS ANIMATION =====
+    const blockedBars = document.querySelectorAll('.blocked-bar');
+    const blockedValues = document.querySelectorAll('.blocked-value');
+
+    ScrollTrigger.create({
+      trigger: '.card-blocked',
+      start: "top 80%",
+      onEnter: () => {
+        // Animate bars
+        blockedBars.forEach((bar, i) => {
+          const targetWidth = bar.dataset.width;
+          gsap.to(bar, {
+            width: targetWidth + '%',
+            duration: 1,
+            delay: i * 0.15,
+            ease: "power2.out"
+          });
+        });
+
+        // Animate counter values
+        blockedValues.forEach((val, i) => {
+          const targetValue = parseInt(val.dataset.value);
+          const counter = { value: 0 };
+          gsap.to(counter, {
+            value: targetValue,
+            duration: 1,
+            delay: i * 0.15,
+            ease: "power2.out",
+            onUpdate: () => {
+              val.textContent = Math.round(counter.value);
+            }
+          });
+        });
+      },
+      once: true
     });
   </script>
 
