@@ -95,7 +95,7 @@ body {
 }
 
 .page-wrapper>section {
-  min-height: 80vh;
+  min-height: 70vh;
 }
 
 /* ===== NAVBAR ===== */
@@ -2249,5 +2249,10 @@ body {
   .scroll-logo img {
     width: 80px;
     height: 36px;
+  }
+
+  /* Utility: Hide on mobile */
+  .hidden-mobile {
+    display: none !important;
   }
 }
