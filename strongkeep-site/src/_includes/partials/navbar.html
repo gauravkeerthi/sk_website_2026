@@ -1,0 +1,108 @@
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a href="/" class="nav-logo" style="justify-content: center;">
+      <img src="/assets/images/strongkeep.png" alt="StrongKeep Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/features/" class="{{ '/features' | activeNav(page.url) }}">Features</a></li>
+      <li class="has-dropdown {{ '/solutions' | activeNav(page.url) }}">
+        <a href="/solutions/" class="dropdown-trigger">Solutions <svg class="dropdown-arrow" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-column">
+            <h6>Industry</h6>
+            <ul>
+              <li><a href="/solutions/healthcare-clinics/">Healthcare Clinics</a></li>
+              <li><a href="/solutions/professional-services/">Professional Services</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-column">
+            <h6>Use Cases</h6>
+            <ul>
+              <li><a href="/solutions/protection-assurance/">Protection Assurance</a></li>
+              <li><a href="/solutions/compliance-readiness/">Compliance Readiness</a></li>
+              <li><a href="/solutions/starting-your-cybersecurity-journey/">Starting Your Cybersecurity Journey</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="/pricing/" class="{{ '/pricing' | activeNav(page.url) }}">Pricing</a></li>
+      <li class="has-dropdown {% if page.url.startsWith('/faq') or page.url.startsWith('/news-updates') %}active{% endif %}">
+        <a href="#" class="dropdown-trigger">Resources <svg class="dropdown-arrow" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg></a>
+        <div class="dropdown-menu dropdown-menu-single">
+          <ul>
+            <li><a href="/news-updates/">News & Updates</a></li>
+            <li><a href="/faq/">Frequently Asked Questions</a></li>
+            <li><a href="https://help.strongkeep.com" target="_blank" rel="noopener">Help Center</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="/about/" class="{{ '/about' | activeNav(page.url) }}">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://app.strongkeep.com/login" class="btn-signin">Log in</a>
+      <a href="https://app.strongkeep.com/register" class="btn-demo">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/" class="nav-logo">
+    <img src="/assets/images/strongkeep.svg" alt="StrongKeep Logo">
+  </a>
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <ul class="mobile-menu-links">
+    <li><a href="/features/">Features</a></li>
+    <li class="mobile-has-dropdown">
+      <button class="mobile-dropdown-trigger">Solutions <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg></button>
+      <div class="mobile-dropdown-content">
+        <h6>Industry</h6>
+        <ul>
+          <li><a href="/solutions/healthcare-clinics/">Healthcare Clinics</a></li>
+          <li><a href="/solutions/professional-services/">Professional Services</a></li>
+        </ul>
+        <h6>Use Cases</h6>
+        <ul>
+          <li><a href="/solutions/protection-assurance/">Protection Assurance</a></li>
+          <li><a href="/solutions/compliance-readiness/">Compliance Readiness</a></li>
+          <li><a href="/solutions/starting-your-cybersecurity-journey/">Starting Your Cybersecurity Journey</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="/pricing/">Pricing</a></li>
+    <li class="mobile-has-dropdown">
+      <button class="mobile-dropdown-trigger">Resources <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg></button>
+      <div class="mobile-dropdown-content">
+        <ul>
+          <li><a href="/news-updates/">News & Updates</a></li>
+          <li><a href="/faq/">Frequently Asked Questions</a></li>
+          <li><a href="https://help.strongkeep.com" target="_blank" rel="noopener">Help Center</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+  <div class="mobile-menu-actions">
+    <a href="https://app.strongkeep.com/login" class="btn-signin">Log in</a>
+    <a href="https://app.strongkeep.com/register" class="btn-demo">Sign up</a>
+  </div>
+</div>
