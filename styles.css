@@ -518,7 +518,7 @@ body {
   position: absolute;
   bottom: 0;
   right: -5%;
-  width: 45%;
+  width: 40%;
   height: auto;
   z-index: 2;
   border-radius: 12px 0 0 0;
@@ -1554,7 +1554,11 @@ body {
 
 /* Teams card */
 .card-teams .card-visual {
-  height: 220px;
+  height: auto;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .team-circle {
@@ -1638,6 +1642,150 @@ body {
 .team-face:nth-child(8) {
   top: 18%;
   left: -2px;
+}
+
+/* Cyber Checklist Card */
+.cyber-checklist {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  width: 100%;
+}
+
+.checklist-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.checklist-header {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.checklist-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  max-width: 50%;
+}
+
+.progress-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.progress-bar-track {
+  flex: 1;
+  height: 6px;
+  background: var(--gray-200);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, #4ECDC4, #6BD5CE);
+  border-radius: 3px;
+}
+
+.checklist-items {
+  display: flex;
+  flex-direction: column;
+  /* gap: 8px; */
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 6px;
+  /* border: 1px solid var(--gray-200); */
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.checklist-item.active {
+  border-color: var(--gray-400);
+  background: var(--gray-100);
+}
+
+.check-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #1E3C72;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.check-icon svg {
+  width: 14px;
+  height: 14px;
+  color: #1E3C72;
+}
+
+.check-icon.empty {
+  border-color: var(--gray-400);
+}
+
+.check-icon.empty svg {
+  opacity: 0;
+}
+
+.checklist-item.completed .check-icon {
+  background: transparent;
+}
+
+.checklist-item.completed span {
+  text-decoration: line-through;
+  color: var(--gray-500);
+}
+
+.checklist-item span {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 450;
+  color: var(--gray-600);
+}
+
+.item-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--gray-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.item-arrow svg {
+  width: 14px;
+  height: 14px;
+  color: var(--gray-500);
+}
+
+.item-arrow.filled {
+  background: #1E3C72;
+  border-color: #1E3C72;
+}
+
+.item-arrow.filled svg {
+  color: white;
 }
 
 /* ===== CTA SECTION ===== */
