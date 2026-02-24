@@ -1,7 +1,270 @@
 ---
 layout: base.njk
 title: "Pricing"
-description: "Simple, transparent pricing. Full protection from $39/month."
+description: "Explore our scalable pricing plans tailored to every business need. Choose from Protection, Compliance, or
+Resilience plans."
 ---
 
-<!-- Page content will go here -->
+
+<!-- PRICING HERO -->
+<section class="pricing-hero">
+  <h1 class="animate-on-scroll">Pricing plans that <small><i>scale</i></small> with your business</h1>
+
+  <div class="pricing-toggle-wrapper">
+    <span class="pricing-toggle-label" id="label-monthly">Monthly</span>
+    <div class="pricing-toggle annual" id="pricing-toggle">
+      <div class="pricing-toggle-knob"></div>
+    </div>
+    <span class="pricing-toggle-label active" id="label-annual">Annually</span>
+  </div>
+  <p class="pricing-savings">Save 20% more with annual billing</p>
+</section>
+
+<!-- PRICING CARDS -->
+<section class="pricing-grid">
+  <!-- Protection Plan -->
+  <div class="pricing-card animate-on-scroll">
+    <div class="pricing-card-header">
+      <img src="/assets/images/pricing/icon-protection.svg" alt="Protection" class="pricing-card-icon">
+      <span class="pricing-card-title">Protection</span>
+    </div>
+    <p class="pricing-card-description">Best for business owners who want fast cybersecurity. Block threats, train
+      staff, and sleep better at night.</p>
+
+    <div class="pricing-card-price">
+      <span class="price-strikeout" data-annual="$65" data-monthly="$81">$65</span>
+      <span class="price-current" data-annual="$39" data-monthly="$49">$39</span>
+      <span class="price-period">/month</span>
+    </div>
+    <p class="price-offer">for our early customers</p>
+
+    <p class="pricing-features-title">What you get:</p>
+    <ul class="pricing-feature-list">
+      <li class="pricing-feature-item">
+        Prevent phishing & malware<br>
+        • Anti-malware (up to 5 devices + <span data-annual="$5" data-monthly="$6">$5</span>/month/device)<br>
+        • Web filter (up to 5 devices + <span data-annual="$5" data-monthly="$6">$5</span>/month/device)<br>
+        • Website & Email security scans (up to 10 verified domains)
+      </li>
+      <li class="pricing-feature-item">
+        Secure your employees<br>
+        • Password manager<br>
+        • Cyber awareness and phishing training
+      </li>
+      <li class="pricing-feature-item">
+        Ensure you are prepared<br>
+        • Cyber crisis simulation<br>
+        • Incident diagnostic tool
+      </li>
+    </ul>
+
+    <div class="pricing-cta">
+      <a href="https://app.strongkeep.com/register?state=PROTECTION" class="btn-hero">Get Started</a>
+    </div>
+  </div>
+
+  <!-- Compliance Plan -->
+  <div class="pricing-card animate-on-scroll">
+    <div class="pricing-card-header">
+      <img src="/assets/images/pricing/icon-compliance.svg" alt="Compliance" class="pricing-card-icon">
+      <span class="pricing-card-title">Compliance</span>
+    </div>
+    <p class="pricing-card-description">Best for clinics and vendors who need to pass audits or get insured. Fast-track
+      certification and save $10,000 vs. audit firms.</p>
+
+    <div class="pricing-card-price">
+      <span class="price-strikeout" data-annual="$198" data-monthly="$248">$198</span>
+      <span class="price-current" data-annual="$159" data-monthly="$199">$159</span>
+      <span class="price-period">/month</span>
+    </div>
+    <p class="price-offer">for our early customers</p>
+
+    <p class="pricing-features-title">All Protection features, plus:</p>
+    <ul class="pricing-feature-list">
+      <li class="pricing-feature-item">
+        Get certified<br>
+        • CSA Cyber Essentials certification<br>
+        <span class="coming-soon">• MOH Health Information Bill (coming soon)<br>
+          • Data Privacy Essentials certification (coming soon)</span>
+      </li>
+      <li class="pricing-feature-item">Adopt best-in-class SOPs</li>
+      <li class="pricing-feature-item">
+        Stay compliant with ease<br>
+        • Evidence tracking<br>
+        • Regular reminders<br>
+        • Audit logs
+      </li>
+      <li class="pricing-feature-item">
+        Access to cyber insurance<br>
+        • Fast underwriting<br>
+        • Lower premiums
+      </li>
+    </ul>
+
+    <div class="pricing-cta">
+      <a href="https://app.strongkeep.com/register?state=COMPLIANCE" class="btn-hero">Get Started</a>
+    </div>
+  </div>
+
+  <!-- Resilience Plan -->
+  <div class="pricing-card animate-on-scroll">
+    <div class="pricing-card-header">
+      <img src="/assets/images/pricing/icon-resilience.svg" alt="Resilience" class="pricing-card-icon">
+      <span class="pricing-card-title">Resilience</span>
+    </div>
+    <p class="pricing-card-description">Best for regulated or fast-growing vendors who want to stay compliant and
+      receive proactive Agentic AI protection 24/7.</p>
+
+    <p class="price-tba">Pricing to be announced</p>
+
+    <p class="pricing-features-title">All Compliance features, plus:</p>
+    <ul class="pricing-feature-list">
+      <li class="pricing-feature-item">
+        Get certified for higher standards<br>
+        • Guided support for global standards
+      </li>
+      <li class="pricing-feature-item">
+        Stay continuously compliant<br>
+        • Alerts when your controls are out of date or audit requirements aren't met
+      </li>
+      <li class="pricing-feature-item">Your own virtual CISO that works 24/7</li>
+      <li class="pricing-feature-item">
+        Bid with confidence<br>
+        • Auto-completed procurement questionnaires
+      </li>
+    </ul>
+
+    <div class="pricing-cta">
+      <a href="/contact-form" class="btn-ghost">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section class="addons-section">
+  <h2 class="animate-on-scroll">Add-on features</h2>
+  <p class="addons-subtitle">Level up your security defences and get extra peace of mind with these upgrades.</p>
+
+  <div class="addons-grid">
+    <!-- Device Coverage -->
+    <div class="addon-card animate-on-scroll">
+      <div class="addon-header">
+        <img src="/assets/images/pricing/icon-device.svg" alt="Device Coverage" class="addon-icon">
+        <span class="addon-title">Device Coverage</span>
+      </div>
+      <p class="addon-description">Purchase coverage for your devices to enable both anti-malware and web filter
+        services — two essential safeguards that work together to keep your devices secure.</p>
+      <p class="addon-description"><strong>1. Anti-malware</strong><br>
+        With easy onboarding, real-time monitoring, and advanced threat blocking, you get full visibility and protect
+        all your devices against vulnerabilities.</p>
+      <p class="addon-description"><strong>2. Web filter</strong><br>
+        Protect your devices with a web filter that blocks harmful websites from being accessed, stops threats early,
+        and reduces the chance of malware or phishing from getting through.</p>
+      <div class="addon-price">
+        <span class="price-strikeout">$6</span>
+        <span class="price-current">$5</span>
+        <span class="price-period">/month/device</span>
+        <i> billed annually</i>
+      </div>
+    </div>
+
+    <!-- Cyber Insurance -->
+    <div class="addon-card animate-on-scroll">
+      <div class="addon-header">
+        <img src="/assets/images/pricing/icon-insurance.svg" alt="Cyber Insurance" class="addon-icon">
+        <span class="addon-title">Cyber Insurance</span>
+      </div>
+      <p class="addon-description">Protect your business with up to $250,000 in financial assurance, helping you recover
+        from cyber incident losses, cover unexpected expenses like legal fees or recovery services, and get your
+        operations back on track.</p>
+      <ul class="pricing-feature-list">
+        <li class="pricing-feature-item">To qualify, your organisation must be CSA Cyber Essentials certified.</li>
+        <li class="pricing-feature-item">For an estimated cost of $1,000 - $3,000, this insurance offers up to $250,000
+          in
+          coverage.</li>
+        <li class="pricing-feature-item">Get financial support, incident response, and recovery support during major
+          incidents like data
+          breaches, business interruption, and
+          ransomware attacks.</li>
+      </ul>
+      <div class="addon-price">
+        <span class="price-period">estimated at </span>
+        <span class="price-current">$85</span>
+        <span class="price-period">/month</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CYBER SCAN CTA -->
+<section class="cyberscan-section">
+  <div class="cyberscan-container">
+    <div class="cyberscan-content">
+      <h2 class="animate-on-scroll">Curious to see how your fort holds up against cyberattacks?</h2>
+      <p>Attackers love easy targets. Let's make sure you're not one of them. Spot your weak areas early and fix them
+        fast. Try out our free scan today and see where you stand!</p>
+      <a href="https://cyberscan.strongkeep.com/" target="_blank" class="btn-hero">Run a 1-minute cyber scan</a>
+    </div>
+    <div class="cyberscan-image animate-on-scroll">
+      <img src="/assets/images/pricing/cyberscan-knight.avif" alt="Knight guarding your cybersecurity" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <div class="final-cta-content">
+    <h2 class="animate-on-scroll">Stay ahead of threats — don't wait to fortify and defend your business!</h2>
+    <a href="https://app.strongkeep.com/register" class="btn-hero">Get Started</a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('pricing-toggle');
+    const labelMonthly = document.getElementById('label-monthly');
+    const labelAnnual = document.getElementById('label-annual');
+
+    let isAnnual = true;
+
+    function updatePrices() {
+      const priceType = isAnnual ? 'annual' : 'monthly';
+
+      // Update all elements with data attributes
+      document.querySelectorAll('[data-annual]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + priceType);
+      });
+
+      // Update toggle appearance
+      if (isAnnual) {
+        toggle.classList.add('annual');
+        labelAnnual.classList.add('active');
+        labelMonthly.classList.remove('active');
+      } else {
+        toggle.classList.remove('annual');
+        labelMonthly.classList.add('active');
+        labelAnnual.classList.remove('active');
+      }
+    }
+
+    toggle.addEventListener('click', function () {
+      isAnnual = !isAnnual;
+      updatePrices();
+    });
+
+    // Also allow clicking on the labels
+    labelMonthly.addEventListener('click', function () {
+      if (isAnnual) {
+        isAnnual = false;
+        updatePrices();
+      }
+    });
+
+    labelAnnual.addEventListener('click', function () {
+      if (!isAnnual) {
+        isAnnual = true;
+        updatePrices();
+      }
+    });
+  });
+</script>

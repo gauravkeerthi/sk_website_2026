@@ -1,0 +1,7 @@
+# Archive/backup files
+old_site/
+old_index.html
+old_styles.css
+
+# OS files
+.DS_Store
