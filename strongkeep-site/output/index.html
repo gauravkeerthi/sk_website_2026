@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity for Small Businesses | StrongKeep</title>
+  <meta name="description" content="The only cybersecurity platform built for small businesses.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+  <!-- FULL-SCREEN NETWORK BACKGROUND -->
+  <div class="network-bg">
+    <canvas id="networkCanvas"></canvas>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a href="/" class="nav-logo" style="justify-content: center;">
+      <img src="/assets/images/strongkeep.png" alt="StrongKeep Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/features/" class="">Features</a></li>
+      <li class="has-dropdown ">
+        <a href="/solutions/" class="dropdown-trigger">Solutions <svg class="dropdown-arrow" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-column">
+            <h6>Industry</h6>
+            <ul>
+              <li><a href="/solutions/healthcare-clinics/">Healthcare Clinics</a></li>
+              <li><a href="/solutions/professional-services/">Professional Services</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-column">
+            <h6>Use Cases</h6>
+            <ul>
+              <li><a href="/solutions/protection-assurance/">Protection Assurance</a></li>
+              <li><a href="/solutions/compliance-readiness/">Compliance Readiness</a></li>
+              <li><a href="/solutions/starting-your-cybersecurity-journey/">Starting Your Cybersecurity Journey</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="/pricing/" class="">Pricing</a></li>
+      <li class="has-dropdown ">
+        <a href="#" class="dropdown-trigger">Resources <svg class="dropdown-arrow" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg></a>
+        <div class="dropdown-menu dropdown-menu-single">
+          <ul>
+            <li><a href="/news-updates/">News & Updates</a></li>
+            <li><a href="/faq/">Frequently Asked Questions</a></li>
+            <li><a href="https://help.strongkeep.com" target="_blank" rel="noopener">Help Center</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="/about/" class="">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://app.strongkeep.com/login" class="btn-signin">Log in</a>
+      <a href="https://app.strongkeep.com/register" class="btn-demo">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/" class="nav-logo">
+    <img src="/assets/images/strongkeep.svg" alt="StrongKeep Logo">
+  </a>
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <ul class="mobile-menu-links">
+    <li><a href="/features/">Features</a></li>
+    <li class="mobile-has-dropdown">
+      <button class="mobile-dropdown-trigger">Solutions <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg></button>
+      <div class="mobile-dropdown-content">
+        <h6>Industry</h6>
+        <ul>
+          <li><a href="/solutions/healthcare-clinics/">Healthcare Clinics</a></li>
+          <li><a href="/solutions/professional-services/">Professional Services</a></li>
+        </ul>
+        <h6>Use Cases</h6>
+        <ul>
+          <li><a href="/solutions/protection-assurance/">Protection Assurance</a></li>
+          <li><a href="/solutions/compliance-readiness/">Compliance Readiness</a></li>
+          <li><a href="/solutions/starting-your-cybersecurity-journey/">Starting Your Cybersecurity Journey</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="/pricing/">Pricing</a></li>
+    <li class="mobile-has-dropdown">
+      <button class="mobile-dropdown-trigger">Resources <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg></button>
+      <div class="mobile-dropdown-content">
+        <ul>
+          <li><a href="/news-updates/">News & Updates</a></li>
+          <li><a href="/faq/">Frequently Asked Questions</a></li>
+          <li><a href="https://help.strongkeep.com" target="_blank" rel="noopener">Help Center</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+  <div class="mobile-menu-actions">
+    <a href="https://app.strongkeep.com/login" class="btn-signin">Log in</a>
+    <a href="https://app.strongkeep.com/register" class="btn-demo">Sign up</a>
+  </div>
+</div>
+
+
+    
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1> <a href="#" class="knight-link"><img src="/assets/images/sirstonk.png" height="60px" class="knight-img"></a><br
+        class="mobile-br"> Cybersecurity<br>for
+      <em>smaller</em> businesses
+    </h1>
+    <p>Protection that makes sense for organisations that don't hire cyber nerds, don't want to fiddle with tools,
+      and don't have money to waste.</p>
+    <p><strong>Plans start from $39/month.</strong></p>
+    <a href="https://cyberscan.strongkeep.com" class="btn-hero">Start with a Free Scan</a>
+    <br /><span class="tiny">No credit card. No installation. Just results.</span>
+  </div>
+  <img src="/assets/images/staffscreen.png" alt="StrongKeep Dashboard" class="hero-screenshot">
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-section" id="problem">
+  <div class="problem-header">
+    <h2 class="animate-on-scroll">Like it or not, <br />you <em>have to</em> do cyber</h2>
+  </div>
+  <div class="problem-cards">
+    <div class="problem-card">
+      <div class="problem-card-image">
+        <video autoplay muted loop playsinline>
+          <source src="/assets/images/threat.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h3>You know the threats... and you've almost been hit</h3>
+      <p>Hackers aren't just after big companies. <a
+          href="https://www.csa.gov.sg/news-events/press-releases/csa-releases-key-findings-from-singapore-cybersecurity-health-report-2023/"
+          target="_blank" rel="noopener">80% of small businesses have experienced a cyber incident</a>,
+        because they're
+        easier to hit. "We're too small" is no longer a defence.</p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-card-image">
+        <video autoplay muted loop playsinline>
+          <source src="/assets/images/regulator.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h3>Regulators and customers demand compliance</h3>
+      <p>Non-compliance means fines, lost customers, tenders you can't qualify for, and a
+        reputation hit you can't afford. </p>
+    </div>
+    <div class="problem-card">
+      <div class="problem-card-image">
+        <video autoplay muted loop playsinline>
+          <source src="/assets/images/smallbusiness.mp4" type="video/mp4">
+        </video>
+      </div>
+      <h3>You lack the time, budget, or technical know-how to start</h3>
+      <p>Hiring a cybersecurity consultant costs more than you have. And without a cyber nerd on your team, you have
+        no idea
+        what to do.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+  <!-- Left Logo Scroller - Scrolls Up -->
+  <div class="logo-scroller">
+    <div class="logo-scroll-track scroll-up logo-scroller-1">
+      <!-- First set of logos -->
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5181732983745119630_BoP.webp" alt="BoP">
+      </div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a0eb76976c38c4a42_aikiForest.avif"
+          alt="AikiForest"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a0031fb0beee91639_sgcodecampus.avif"
+          alt="SG Code Campus"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519f7cafa0b3ce62be3_neumarksurgery.png"
+          alt="Neumark Surgery"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519ef5bd931d8eeef9e_2619cff44becd9d54012669613adbf3c_LUI%20CENTRE.png"
+          alt="Lui Centre"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5192be1a4266e712b82_IHRP.avif"
+          alt="IHRP"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5191a4045010d4db63c_clavystbio.avif"
+          alt="Clavy St Bio"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a518561a17f12f0db94b_curasia.svg"
+          alt="Curasia"></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5181732983745119630_BoP.webp" alt="BoP">
+      </div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a0eb76976c38c4a42_aikiForest.avif"
+          alt="AikiForest"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a0031fb0beee91639_sgcodecampus.avif"
+          alt="SG Code Campus"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519f7cafa0b3ce62be3_neumarksurgery.png"
+          alt="Neumark Surgery"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519ef5bd931d8eeef9e_2619cff44becd9d54012669613adbf3c_LUI%20CENTRE.png"
+          alt="Lui Centre"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5192be1a4266e712b82_IHRP.avif"
+          alt="IHRP"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5191a4045010d4db63c_clavystbio.avif"
+          alt="Clavy St Bio"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a518561a17f12f0db94b_curasia.svg"
+          alt="Curasia"></div>
+    </div>
+  </div>
+  <div class="logo-scroller">
+    <div class="logo-scroll-track scroll-down logo-scroller-3">
+      <!-- First set of logos -->
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5190d91b4cf0ad78fa7_Prudential.avif"
+          alt="Prudential"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a93fa5cb671a67781_wcongplasticsurgery.webp"
+          alt="WC Ong Plastic Surgery"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519be50a9054ee3a8ae_7903352543d7093a7bee9b0b41833b3c_wanderwonder.png"
+          alt="Wander Wonder"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519f0d3ec54223290b8_apex%20heart%20clinic.png"
+          alt="Apex Heart Clinic"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5191cb27d4946d4ba96_b0b972c556a558d222f19e3cb51ca36c_RCLT.png"
+          alt="RCLT"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a28e5314bdb17202d_Skin%20Health%20Singapore%20Pte%20Ltd.avif"
+          alt="Skin Health Singapore"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519b37801cb4990fa58_IntegraPartners.png"
+          alt="Integra Partners"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519e5f6be3d2059f907_5e6bf0cc96e9e9bcbe8259b5184e7726_NBI%20Bearings%20Singapore.png"
+          alt="NBI Bearings Singapore"></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5190d91b4cf0ad78fa7_Prudential.avif"
+          alt="Prudential"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a93fa5cb671a67781_wcongplasticsurgery.webp"
+          alt="WC Ong Plastic Surgery"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519be50a9054ee3a8ae_7903352543d7093a7bee9b0b41833b3c_wanderwonder.png"
+          alt="Wander Wonder"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519f0d3ec54223290b8_apex%20heart%20clinic.png"
+          alt="Apex Heart Clinic"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5191cb27d4946d4ba96_b0b972c556a558d222f19e3cb51ca36c_RCLT.png"
+          alt="RCLT"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a28e5314bdb17202d_Skin%20Health%20Singapore%20Pte%20Ltd.avif"
+          alt="Skin Health Singapore"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519b37801cb4990fa58_IntegraPartners.png"
+          alt="Integra Partners"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519e5f6be3d2059f907_5e6bf0cc96e9e9bcbe8259b5184e7726_NBI%20Bearings%20Singapore.png"
+          alt="NBI Bearings Singapore"></div>
+    </div>
+  </div>
+
+  <!-- Center Content -->
+  <div class="content-z">
+    <h2>Trusted<br>by <i><small>normal</small></i> people</h2>
+    <p>Non-technical people in non-technical organisations have deployed StrongKeep <i>in hours</i> and warded off
+      cyberattacks.</p>
+  </div>
+
+  <!-- Right Logo Scroller - Scrolls Down -->
+  <div class="logo-scroller">
+    <div class="logo-scroll-track scroll-down">
+      <!-- First set of logos -->
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a28e5314bdb17202d_Skin%20Health%20Singapore%20Pte%20Ltd.avif"
+          alt="Skin Health Singapore"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519e5f6be3d2059f907_5e6bf0cc96e9e9bcbe8259b5184e7726_NBI%20Bearings%20Singapore.png"
+          alt="NBI Bearings Singapore"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519b37801cb4990fa58_IntegraPartners.png"
+          alt="Integra Partners"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5191cb27d4946d4ba96_b0b972c556a558d222f19e3cb51ca36c_RCLT.png"
+          alt="RCLT"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519f0d3ec54223290b8_apex%20heart%20clinic.png"
+          alt="Apex Heart Clinic"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519be50a9054ee3a8ae_7903352543d7093a7bee9b0b41833b3c_wanderwonder.png"
+          alt="Wander Wonder"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5190d91b4cf0ad78fa7_Prudential.avif"
+          alt="Prudential"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a93fa5cb671a67781_wcongplasticsurgery.webp"
+          alt="WC Ong Plastic Surgery"></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a28e5314bdb17202d_Skin%20Health%20Singapore%20Pte%20Ltd.avif"
+          alt="Skin Health Singapore"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519e5f6be3d2059f907_5e6bf0cc96e9e9bcbe8259b5184e7726_NBI%20Bearings%20Singapore.png"
+          alt="NBI Bearings Singapore"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519b37801cb4990fa58_IntegraPartners.png"
+          alt="Integra Partners"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5191cb27d4946d4ba96_b0b972c556a558d222f19e3cb51ca36c_RCLT.png"
+          alt="RCLT"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519f0d3ec54223290b8_apex%20heart%20clinic.png"
+          alt="Apex Heart Clinic"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519be50a9054ee3a8ae_7903352543d7093a7bee9b0b41833b3c_wanderwonder.png"
+          alt="Wander Wonder"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5190d91b4cf0ad78fa7_Prudential.avif"
+          alt="Prudential"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a93fa5cb671a67781_wcongplasticsurgery.webp"
+          alt="WC Ong Plastic Surgery"></div>
+    </div>
+  </div>
+  <div class="logo-scroller">
+    <div class="logo-scroll-track scroll-up">
+      <!-- First set of logos -->
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519f7cafa0b3ce62be3_neumarksurgery.png"
+          alt="Neumark Surgery"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a518561a17f12f0db94b_curasia.svg"
+          alt="Curasia"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5192be1a4266e712b82_IHRP.avif"
+          alt="IHRP"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5181732983745119630_BoP.webp" alt="BoP">
+      </div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a0031fb0beee91639_sgcodecampus.avif"
+          alt="SG Code Campus"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5191a4045010d4db63c_clavystbio.avif"
+          alt="Clavy St Bio"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519ef5bd931d8eeef9e_2619cff44becd9d54012669613adbf3c_LUI%20CENTRE.png"
+          alt="Lui Centre"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a0eb76976c38c4a42_aikiForest.avif"
+          alt="AikiForest"></div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519f7cafa0b3ce62be3_neumarksurgery.png"
+          alt="Neumark Surgery"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a518561a17f12f0db94b_curasia.svg"
+          alt="Curasia"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5192be1a4266e712b82_IHRP.avif"
+          alt="IHRP"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5181732983745119630_BoP.webp" alt="BoP">
+      </div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a0031fb0beee91639_sgcodecampus.avif"
+          alt="SG Code Campus"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a5191a4045010d4db63c_clavystbio.avif"
+          alt="Clavy St Bio"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a519ef5bd931d8eeef9e_2619cff44becd9d54012669613adbf3c_LUI%20CENTRE.png"
+          alt="Lui Centre"></div>
+      <div class="scroll-logo"><img
+          src="https://cdn.prod.website-files.com/674fd2a7eefe8c32bdde6afe/6969a51a0eb76976c38c4a42_aikiForest.avif"
+          alt="AikiForest"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILT FOR EVERYONE -->
+<section class="built-for" id="features">
+  <div class="built-for-header animate-on-scroll">
+    <h2>Protection, <i><small>fuss-free</small></i></h2>
+    <p>Search no more. Everything you need to stay secure is bundled and delightfully integrated to protect you
+      24/7.</p>
+  </div>
+
+  <!-- Row 1: Malware Protection | Quote -->
+  <div class="feature-row">
+    <div class="feature-card animate-on-scroll">
+      <div class="card-visual">
+        <div class="card-device-report">
+          <div class="card-device-header"><span>Device Protection Report</span><span>This Week</span></div>
+          <table class="device-table">
+            <thead>
+              <tr>
+                <th>Incident</th>
+                <th>Severity</th>
+                <th>Device</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="incident-icon">🛡️</span> Malware "pirated.exe" blocked</td>
+                <td><span class="severity-badge severity-medium">Medium</span></td>
+                <td>Laptop 1</td>
+              </tr>
+              <tr>
+                <td><span class="incident-icon">⚠️</span> Suspicious uploads blocked</td>
+                <td><span class="severity-badge severity-low">Low</span></td>
+                <td>Desktop 3</td>
+              </tr>
+              <tr>
+                <td><span class="incident-icon">🛡️</span> Malware "macro.pkg" blocked</td>
+                <td><span class="severity-badge severity-high">High</span></td>
+                <td>Laptop 2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <h3>Malware Protection</h3>
+      <p>Detect and block malicious files across all your devices automatically.</p>
+    </div>
+    <div class="quote-card animate-on-scroll">
+      <blockquote>"StrongKeep's platform made sense for us and gave us the protection we needed, in one place. Clear
+        guidance, easy deployment, and at a good price point."
+      </blockquote>
+      <div class="quote-attribution">
+        <div class="quote-author">
+          <strong>IT Manager</strong>
+          Venture Capital Firm
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: Quote | Scam Protection -->
+  <div class="feature-row">
+    <div class="quote-card animate-on-scroll">
+      <blockquote>"Phishing links and scams were a huge risk. With StrongKeep, we can block them
+        before they even reach our staff."
+      </blockquote>
+      <div class="quote-attribution">
+        <div class="quote-author">
+          <strong>Doctor</strong>
+          Specialist Clinic
+        </div>
+      </div>
+    </div>
+    <div class="feature-card animate-on-scroll">
+      <div class="card-visual">
+        <div class="card-blocked">
+          <div class="card-blocked-header"><span>Blocked Sites</span><span>This Week</span></div>
+          <div class="blocked-bars">
+            <div class="blocked-row">
+              <span class="blocked-label">Malware</span>
+              <div class="blocked-bar-container">
+                <div class="blocked-bar bar-red" data-width="100"></div>
+              </div>
+              <span class="blocked-value" data-value="71">0</span>
+            </div>
+            <div class="blocked-row">
+              <span class="blocked-label">Scams / Phishing</span>
+              <div class="blocked-bar-container">
+                <div class="blocked-bar bar-purple" data-width="48"></div>
+              </div>
+              <span class="blocked-value" data-value="34">0</span>
+            </div>
+            <div class="blocked-row">
+              <span class="blocked-label">Suspicious</span>
+              <div class="blocked-bar-container">
+                <div class="blocked-bar bar-light" data-width="17"></div>
+              </div>
+              <span class="blocked-value" data-value="12">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3>Scam Protection</h3>
+      <p>Block malicious websites, phishing attempts, and suspicious domains automatically.</p>
+    </div>
+  </div>
+
+  <!-- Row 3: Secure Habits | Quote -->
+  <div class="feature-row">
+    <div class="feature-card animate-on-scroll">
+      <div class="card-visual">
+        <div class="card-insights hidden-mobile">
+          <div class="insights-orbit"></div>
+          <div class="insight-pill" id="insightPill">
+            <div class="dot dot-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg></div>
+            <span id="insightText">Basic Cyber Awareness</span>
+          </div>
+        </div>
+        <div class="training-chart">
+          <div class="training-header"><span>Training Results</span>
+            <div class="training-tabs"><span class="training-tab">Weekly</span><span
+                class="training-tab active">Monthly</span></div>
+          </div>
+          <div class="mini-bars">
+            <div class="mini-bar" style="height:40%"></div>
+            <div class="mini-bar" style="height:55%"></div>
+            <div class="mini-bar" style="height:35%"></div>
+            <div class="mini-bar highlight" style="height:65%"><span class="mini-bar-label">46%</span></div>
+            <div class="mini-bar" style="height:50%"></div>
+            <div class="mini-bar" style="height:30%"></div>
+            <div class="mini-bar" style="height:45%"></div>
+          </div>
+        </div>
+      </div>
+      <h3>Secure Habits</h3>
+      <p>Ensure your staff are well trained on cybersecurity basics and can spot phishing and other threats.</p>
+    </div>
+    <div class="quote-card animate-on-scroll">
+      <blockquote>"StrongKeep's platform made cybersecurity easy for us at Birds of Paradise. We onboarded and we
+        are now protected, taking the stress out of protecting our stores and customer data."</blockquote>
+      <div class="quote-attribution">
+        <div class="quote-author">
+          <strong>CEO</strong>
+          F&B Retail Chain
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 4: Quote | Human Risk Control -->
+  <div class="feature-row">
+    <div class="quote-card animate-on-scroll">
+      <blockquote>"Most cyber tools use technical jargon to explain risks, which doesn't help SMBs. We built this so
+        StrongKeep users know what to do, and who to nudge."
+      </blockquote>
+      <div class="quote-attribution">
+        <div class="quote-author">
+          <strong>Vanessa</strong>
+          Designer, StrongKeep
+        </div>
+      </div>
+    </div>
+    <div class="feature-card animate-on-scroll">
+      <div class="card-visual">
+        <div class="card-human-risk">
+          <div class="card-header">
+            <span>Employee Risk Overview</span>
+            <span class="see-all">See all</span>
+          </div>
+          <div class="dept-tags">
+            <span class="dept-tag active">HQ <span class="count">5</span></span>
+            <span class="dept-tag">Sales <span class="count">8</span></span>
+            <span class="dept-tag">Ops <span class="count">13</span></span>
+          </div>
+          <div class="table-scroll-wrapper">
+            <table class="staff-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Grade</th>
+                  <th>Training</th>
+                  <th>Device</th>
+                  <th>Passwords</th>
+                  <th>Recommendation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="staff-name">
+                      <span>Peter Parker</span>
+                    </div>
+                  </td>
+                  <td><span class="grade-badge grade-a">A</span></td>
+                  <td>98%</td>
+                  <td>No alerts</td>
+                  <td>No alerts</td>
+                  <td><span class="status-ok">All clear!</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="staff-name">
+                      <span>Bruce Wayne</span>
+                    </div>
+                  </td>
+                  <td><span class="grade-badge grade-b">B</span></td>
+                  <td>84%</td>
+                  <td><span class="status-warning">4 blocked sites</span></td>
+                  <td>1 reused password</td>
+                  <td><span class="status-warning">Training: Phishing Sites</span></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="staff-name">
+                      <span>Clark Kent</span>
+                    </div>
+                  </td>
+                  <td><span class="grade-badge grade-c">C</span></td>
+                  <td>83%</td>
+                  <td><span class="status-alert">1 malware</span></td>
+                  <td><span class="status-alert">3 weak passwords</span></td>
+                  <td><span class="status-alert">Reduced Access</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <h3>Human Risk Control</h3>
+      <p>See at a glance who in your team needs a "nudge" to improve their cyber risk posture.</p>
+    </div>
+  </div>
+
+  <!-- Row 5: Compliance | Quote -->
+  <div class="feature-row">
+    <div class="feature-card card-teams animate-on-scroll">
+      <div class="card-visual">
+        <div class="cyber-checklist">
+          <div class="checklist-header-row">
+            <div class="checklist-header">Cyber Essentials</div>
+            <div class="checklist-progress">
+              <span class="progress-text">50%</span>
+              <div class="progress-bar-track">
+                <div class="progress-bar-fill"></div>
+              </div>
+            </div>
+          </div>
+          <div class="checklist-items">
+            <div class="checklist-item completed">
+              <div class="check-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span>Select requirements</span>
+              <div class="item-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+            <div class="checklist-item completed">
+              <div class="check-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span>Auto-generate policies</span>
+              <div class="item-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+            <div class="checklist-item active">
+              <div class="check-icon empty">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span>Auto-collect evidence</span>
+              <div class="item-arrow filled">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+            <div class="checklist-item ">
+              <div class="check-icon empty">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <span>Submit for assessment</span>
+              <div class="item-arrow ">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3>Compliance</h3>
+      <p>Quick and painless procurement and regulatory compliance.</p>
+    </div>
+    <div class="quote-card animate-on-scroll">
+      <blockquote>"The guidance / automation provided allows us to put in place policies and collect evidence
+        required painlessly, keeping track of everything in one place."</blockquote>
+      <div class="quote-attribution">
+        <div class="quote-author">
+          <strong>IT Manager</strong>
+          HR Organisation
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <div class="quote-card animate-on-scroll">
+      <blockquote>"The cyber industry required SMBs to hire trained consultants just to deploy the tools. We decided to
+        engineer
+        a platform so intuitive and user-friendly that even a layman can use all of it."
+      </blockquote>
+      <div class="quote-attribution">
+        <div class="quote-author">
+          <strong>Zaishao</strong>
+          COO, StrongKeep
+        </div>
+      </div>
+    </div>
+    <div class="feature-card animate-on-scroll">
+      <div class="card-visual">
+        <div class="card-onboarding">
+
+          <div class="onboarding-tasks">
+            <div class="onboarding-task">
+              <div class="task-icon task-icon-team">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div class="task-content">
+                <div class="task-title">Add your team to start tracking</div>
+                <div class="task-sub">Organising your team ensures nobody is left out</div>
+              </div>
+              <div class="task-meta">
+                <span class="task-progress">0/1</span>
+                <span class="effort-tag effort-low">Low effort</span>
+              </div>
+            </div>
+            <div class="onboarding-subtask">
+              <div class="subtask-check"></div>
+              <span>One-click integration with M365 or Google</span>
+              <span class="subtask-action">Proceed</span>
+            </div>
+            <div class="onboarding-task">
+              <div class="task-icon task-icon-device">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" />
+                  <line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+              </div>
+              <div class="task-content">
+                <div class="task-title">Protect your devices</div>
+                <div class="task-sub">Block common threats and prevent data compromise.</div>
+              </div>
+              <div class="task-meta">
+                <span class="task-progress">0/2</span>
+                <span class="effort-tag effort-medium">Medium</span>
+              </div>
+            </div>
+            <div class="onboarding-task">
+              <div class="task-icon task-icon-lock">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+              <div class="task-content">
+                <div class="task-title">Secure your accounts</div>
+                <div class="task-sub">Centralised password protection for your team.</div>
+              </div>
+              <div class="task-meta">
+                <span class="task-progress">0/1</span>
+                <span class="effort-tag effort-medium">Low</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3>Simple Onboarding</h3>
+      <p>No IT Department or enterprise tools? No problem. We've made it easy for non-techies to onboard their whole
+        company. </p>
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <div><img src="/assets/images/sirstonk.png" height="120px" class="knight-img"></div>
+  <div>
+    <h2 class="animate-on-scroll">Plans start from $39/month</h2>
+    <p class="animate-on-scroll">Join all the businesses using StrongKeep to protect themselves from
+      cyberattacks.
+    </p>
+    <a href="https://cyberscan.strongkeep.com" class="btn-hero">Start with a Free Scan</a>
+    <br /><span class="tiny">No credit card. No installation. Just results.</span>
+  </div>
+</div>
+
+<!-- INTEGRATIONS -->
+<div class="integrations">
+  <div class="integrations-card animate-on-scroll">
+    <div class="integrations-text">
+      <h2>We are <i>reinventing</i> cybersecurity for SMBs</h2>
+      <p>We are changing how cybersecurity is delivered, to provide a cost-effective and scalable offering to
+        small and medium-sized businesses (SMBs) that meets their needs and safeguard their businesses from
+        cyberattacks.</p>
+    </div>
+    <div class="integrations-video">
+      <iframe src="https://www.youtube.com/embed/ULmZ2_sNyG8?rel=0&controls=1&mute=0&start=0"
+        title="StrongKeep Introduction" allow="web-share" allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</div>
+
+<!-- OBJECTIONS / FAQ -->
+<section class="objections">
+  <h2 class="animate-on-scroll">Still not sure? <br />Here are the most common concerns we get</h2>
+  <p class="animate-on-scroll">If you have more questions, feel free to drop us an <a
+      href="mailto:hello@strongkeep.com">email</a>!</p>
+  <div class="objections-grid">
+    <div class="objection-card animate-on-scroll">
+      <h3>"Are we too small to start implementing cybersecurity?"</h3>
+      <p><a
+          href="https://www.csa.gov.sg/news-events/press-releases/csa-releases-key-findings-from-singapore-cybersecurity-health-report-2023/"
+          target="_blank" rel="noopener">80% of cyberattacks hit businesses with fewer than 50 employees</a>. Size
+        makes you easier to hit, not safer.
+        StrongKeep was built exactly for businesses like yours.</p>
+    </div>
+    <div class="objection-card animate-on-scroll">
+      <h3>"We already have antivirus. Isn't that enough?"</h3>
+      <p>Antivirus covers only one layer, and you're <a href="/pricing">probably paying more</a> for just that layer
+        than all of StrongKeep's comprehensive features that cover all the other layers, too.</p>
+    </div>
+    <div class="objection-card animate-on-scroll">
+      <h3>"I'm not sure I can implement this on my own, and my team has no cyber guy."</h3>
+      <p>Most customers are live in under 60 minutes. A sales manager from a pest control company did it himself, so
+        did a doctor, and a HR officer. Our system makes it easy for anybody to set it up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <div class="final-cta-content">
+    <h2 class="animate-on-scroll">Hackers aren't waiting...<br>and neither should you.</h2>
+    <a href="https://cyberscan.strongkeep.com" class="btn-hero">Start with a Free Scan →</a>
+    <p class="final-cta-fine-print">No credit card. No installation. Results in 60 seconds.</p>
+  </div>
+</div>
+
+    <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-card">
+    <!-- Header with logo and social -->
+    <div class="footer-header">
+      <div class="footer-logo">
+        <img src="/assets/images/strongkeep.png" alt="StrongKeep">
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Links Grid -->
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <h5>Features</h5>
+        <ul>
+          <li><a href="/features/">Compliance</a></li>
+          <li><a href="/features/">Protection</a></li>
+          <li><a href="/features/">Training</a></li>
+          <li><a href="/features/">Detection</a></li>
+          <li><a href="/features/">Response</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <h6>Industry</h6>
+        <ul>
+          <li><a href="/solutions/healthcare-clinics/">Healthcare Clinics</a></li>
+          <li><a href="/solutions/professional-services/">Professional Services</a></li>
+        </ul>
+        <h6>Use Cases</h6>
+        <ul>
+          <li><a href="/solutions/protection-assurance/">Protection Assurance</a></li>
+          <li><a href="/solutions/compliance-readiness/">Compliance Readiness</a></li>
+          <li><a href="/solutions/starting-your-cybersecurity-journey/">Starting a Cybersecurity Journey</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="/news-updates/">News & Updates</a></li>
+          <li><a href="/faq/">Frequently Asked Questions</a></li>
+          <li><a href="https://help.strongkeep.com" target="_blank" rel="noopener">Help Center</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/about/">About us</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/partners/">Partners</a></li>
+          <li><a href="/contact-form/">Contact us</a></li>
+          <li><a href="/terms-of-service/">Terms of Service</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright">
+      &copy; 2026 StrongKeep. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<div style="height:50px"></div>
+
+
+  </div>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ===== MOBILE MENU =====
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('active');
+      mobileMenuOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      mobileMenuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.mobile-menu-links a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // ===== MOBILE DROPDOWN TOGGLES =====
+    document.querySelectorAll('.mobile-dropdown-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parent = trigger.closest('.mobile-has-dropdown');
+        const isActive = parent.classList.contains('active');
+
+        // Close all other dropdowns
+        document.querySelectorAll('.mobile-has-dropdown.active').forEach(dropdown => {
+          if (dropdown !== parent) {
+            dropdown.classList.remove('active');
+          }
+        });
+
+        // Toggle current dropdown
+        parent.classList.toggle('active');
+      });
+    });
+
+    // ===== FLOATING PHOTOS ANIMATION =====
+    document.querySelectorAll('.float-photo').forEach((photo, i) => {
+      gsap.to(photo, {
+        y: -12,
+        duration: 2.5 + (i % 3) * 0.5,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: i * 0.25
+      });
+    });
+
+    // ===== SCROLL TRIGGERED ANIMATIONS =====
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      gsap.set(el, { opacity: 0, y: 30 }); // Ensure initial state is set by GSAP
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 85%",
+        once: true,
+        onEnter: () => {
+          gsap.to(el, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out"
+          });
+        }
+      });
+    });
+
+    // ===== NAVBAR ENTRANCE =====
+    gsap.from('.navbar-inner', {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      delay: 0.2
+    });
+
+    // ===== HERO ENTRANCE ANIMATION =====
+    const heroTl = gsap.timeline({ delay: 0.5 });
+    heroTl.from('.hero h1', {
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    })
+      .from('.hero p', {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      }, "-=0.5")
+      .from('.btn-hero', {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.6,
+        ease: "back.out(1.7)"
+      }, "-=0.4")
+      .from('.tiny', {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.6,
+        ease: "back.out(1.7)"
+      }, "-=0.4");
+
+    // ===== INSIGHT PILL ROTATOR =====
+    const insightPill = document.getElementById('insightPill');
+    if (insightPill) {
+      const insights = [
+        { text: 'Basic Cyber Awareness', color: 'dot-cyan', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>' },
+        { text: 'Spot Signs of Phishing', color: 'dot-red', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>' },
+        { text: 'Crisis Preparation', color: 'dot-cyan', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>' },
+      ];
+      let insightIdx = 0;
+      gsap.set(insightPill, { force3D: true });
+
+      setInterval(() => {
+        insightIdx = (insightIdx + 1) % insights.length;
+        const text = document.getElementById('insightText');
+        const dot = insightPill.querySelector('.dot');
+
+        gsap.to(insightPill, {
+          opacity: 0,
+          y: -10,
+          duration: 0.3,
+          ease: "power2.in",
+          onComplete: () => {
+            text.textContent = insights[insightIdx].text;
+            dot.className = 'dot ' + insights[insightIdx].color;
+            dot.innerHTML = insights[insightIdx].icon;
+            gsap.fromTo(insightPill,
+              { opacity: 0, y: 10 },
+              { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
+            );
+          }
+        });
+      }, 3000);
+    }
+
+    // ===== LOGO CAROUSEL =====
+    // Only run if integrations section exists
+    const logoName = document.getElementById('logoName');
+    const logoDesc = document.getElementById('logoDesc');
+    if (logoName && logoDesc) {
+      const logoCards = document.querySelectorAll('.logo-card');
+      const logoLabel = document.getElementById('logoLabel');
+      let activeLogoIdx = 2;
+
+      function setActiveLogo(idx, animate = true) {
+        activeLogoIdx = idx;
+        const card = logoCards[idx];
+
+        if (animate) {
+          gsap.to(logoLabel, {
+            opacity: 0,
+            y: 10,
+            duration: 0.2,
+            ease: "power2.in",
+            onComplete: () => {
+              logoName.textContent = card.dataset.name;
+              logoDesc.textContent = card.dataset.desc;
+              gsap.to(logoLabel, {
+                opacity: 1,
+                y: 0,
+                duration: 0.3,
+                ease: "power2.out"
+              });
+            }
+          });
+        } else {
+          logoName.textContent = card.dataset.name;
+          logoDesc.textContent = card.dataset.desc;
+        }
+      }
+
+      logoCards.forEach((card, i) => {
+        card.addEventListener('mouseenter', () => {
+          setActiveLogo(i);
+          gsap.to(card, {
+            scale: 1.15,
+            y: -15,
+            rotation: 0,
+            duration: 0.4,
+            ease: "power2.out"
+          });
+        });
+        card.addEventListener('mouseleave', () => {
+          const rotations = [-12, -6, 0, 6, 12];
+          const yOffsets = [20, -5, -15, -5, 20];
+          gsap.to(card, {
+            scale: i === 2 ? 1.15 : 1,
+            y: yOffsets[i],
+            rotation: rotations[i],
+            duration: 0.4,
+            ease: "power2.out"
+          });
+        });
+      });
+
+      let logoInterval = setInterval(() => {
+        activeLogoIdx = (activeLogoIdx + 1) % logoCards.length;
+        setActiveLogo(activeLogoIdx);
+      }, 3000);
+
+      const logosCarousel = document.getElementById('logosCarousel');
+      if (logosCarousel) {
+        logosCarousel.addEventListener('mouseenter', () => clearInterval(logoInterval));
+        logosCarousel.addEventListener('mouseleave', () => {
+          logoInterval = setInterval(() => {
+            activeLogoIdx = (activeLogoIdx + 1) % logoCards.length;
+            setActiveLogo(activeLogoIdx);
+          }, 3000);
+        });
+      }
+    } // End of logo carousel if block
+
+
+    // ===== FEATURE CARDS HOVER EFFECTS =====
+    document.querySelectorAll('.feature-card').forEach(card => {
+      // Set initial state for GPU acceleration
+      gsap.set(card, { force3D: true, willChange: "transform" });
+
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          y: -8,
+          duration: 0.35,
+          ease: "power2.out",
+          overwrite: "auto"
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          y: 0,
+          duration: 0.35,
+          ease: "power2.out",
+          overwrite: "auto"
+        });
+      });
+    });
+
+    // ===== BUTTON HOVER EFFECTS =====
+    document.querySelectorAll('.btn-hero, .btn-purple, .btn-demo').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        gsap.to(btn, { y: -2, scale: 1.02, duration: 0.25, ease: "power2.out" });
+      });
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { y: 0, scale: 1, duration: 0.25, ease: "power2.out" });
+      });
+    });
+
+    // ===== TEAM FACES ORBIT ANIMATION =====
+    document.querySelectorAll('.team-face').forEach((face, i) => {
+      gsap.set(face, { force3D: true });
+      gsap.to(face, {
+        y: "+=5",
+        duration: 1.5 + (i * 0.2),
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: i * 0.15
+      });
+    });
+
+    // ===== INSIGHTS ORBIT PULSE =====
+    gsap.set('.insights-orbit', { force3D: true });
+    gsap.to('.insights-orbit', {
+      scale: 1.05,
+      opacity: 0.7,
+      duration: 2,
+      ease: "sine.inOut",
+      repeat: -1,
+      yoyo: true
+    });
+
+    // ===== LEGAL DOCS SHUFFLE =====
+    document.querySelectorAll('.legal-doc').forEach((doc, i) => {
+      gsap.set(doc, { force3D: true });
+      gsap.to(doc, {
+        rotation: `+=${(i - 1) * 2}`,
+        y: "+=3",
+        duration: 2 + i * 0.3,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: i * 0.2
+      });
+    });
+
+    // ===== NAV LINKS HOVER =====
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        gsap.to(link, { backgroundColor: "rgba(245,245,247,1)", color: "#111", duration: 0.25, ease: "power2.out" });
+      });
+      link.addEventListener('mouseleave', () => {
+        gsap.to(link, { backgroundColor: "rgba(245,245,247,0)", color: "#5A5B60", duration: 0.25, ease: "power2.out" });
+      });
+    });
+
+    // ===== SIGN IN BUTTON HOVER =====
+    document.querySelectorAll('.btn-signin').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        gsap.to(btn, { borderColor: "#9B9CA1", duration: 0.2, ease: "power2.out" });
+      });
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { borderColor: "#E8E9ED", duration: 0.2, ease: "power2.out" });
+      });
+    });
+
+    // ===== SOCIAL ICONS HOVER =====
+    document.querySelectorAll('.social-icon').forEach(icon => {
+      icon.addEventListener('mouseenter', () => {
+        gsap.to(icon, { backgroundColor: "#7A7B80", color: "#fff", scale: 1.1, duration: 0.25, ease: "power2.out" });
+      });
+      icon.addEventListener('mouseleave', () => {
+        gsap.to(icon, { backgroundColor: "#E8E9ED", color: "#111", scale: 1, duration: 0.25, ease: "power2.out" });
+      });
+    });
+
+    // ===== FOOTER LINKS HOVER =====
+    document.querySelectorAll('.footer-col ul li a').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        gsap.to(link, { color: "#1E3C72", x: 3, duration: 0.2, ease: "power2.out" });
+      });
+      link.addEventListener('mouseleave', () => {
+        gsap.to(link, { color: "#111", x: 0, duration: 0.2, ease: "power2.out" });
+      });
+    });
+
+    // ===== FULL-SCREEN NETWORK ANIMATION =====
+    (function () {
+      const canvas = document.getElementById('networkCanvas');
+      const ctx = canvas.getContext('2d');
+      let nodes = [];
+      const nodeCount = 50;
+      const connectionDistance = 180;
+      let dpr = 1;
+      let canvasWidth = 0;
+      let canvasHeight = 0;
+
+      // Colors
+      const colors = {
+        lineGrey: 'rgba(120, 120, 130, 0.15)',
+        lineRed: 'rgba(232, 80, 58, 0.12)',
+        nodeBlue: 'rgba(30, 60, 114, 0.6)',
+        nodeRed: 'rgba(232, 80, 58, 0.5)'
+      };
+
+      function resize() {
+        dpr = window.devicePixelRatio || 1;
+        canvasWidth = window.innerWidth;
+        canvasHeight = window.innerHeight;
+
+        // Set display size
+        canvas.style.width = canvasWidth + 'px';
+        canvas.style.height = canvasHeight + 'px';
+
+        // Set actual size in memory (scaled for retina)
+        canvas.width = canvasWidth * dpr;
+        canvas.height = canvasHeight * dpr;
+
+        // Scale context to match
+        ctx.scale(dpr, dpr);
+      }
+
+      function createNodes() {
+        nodes = [];
+        for (let i = 0; i < nodeCount; i++) {
+          const isRed = Math.random() > 0.7;
+          nodes.push({
+            x: Math.random() * canvasWidth,
+            y: Math.random() * canvasHeight,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            radius: Math.random() * 4 + 2,
+            color: isRed ? colors.nodeRed : colors.nodeBlue,
+            lineColor: isRed ? colors.lineRed : colors.lineGrey
+          });
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        // Update and draw nodes
+        nodes.forEach((node, i) => {
+          // Update position
+          node.x += node.vx;
+          node.y += node.vy;
+
+          // Bounce off edges
+          if (node.x < 0 || node.x > canvasWidth) node.vx *= -1;
+          if (node.y < 0 || node.y > canvasHeight) node.vy *= -1;
+
+          // Keep in bounds
+          node.x = Math.max(0, Math.min(canvasWidth, node.x));
+          node.y = Math.max(0, Math.min(canvasHeight, node.y));
+
+          // Draw connections to nearby nodes
+          for (let j = i + 1; j < nodes.length; j++) {
+            const other = nodes[j];
+            const dx = other.x - node.x;
+            const dy = other.y - node.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < connectionDistance) {
+              const opacity = 1 - (distance / connectionDistance);
+              ctx.beginPath();
+              ctx.moveTo(node.x, node.y);
+              ctx.lineTo(other.x, other.y);
+              // Alternate line colors
+              const lineColor = (i + j) % 3 === 0 ? colors.lineRed : colors.lineGrey;
+              ctx.strokeStyle = lineColor.replace(/[\d.]+\)$/, (opacity * 0.3) + ')');
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+
+          // Draw node
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+          ctx.fillStyle = node.color;
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      // Initialize
+      resize();
+      createNodes();
+      animate();
+
+      // Handle resize
+      window.addEventListener('resize', () => {
+        resize();
+        createNodes();
+      });
+
+      // GSAP pulse effect on random nodes
+      function pulseRandomNode() {
+        if (nodes.length > 0) {
+          const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
+          const originalRadius = randomNode.radius;
+          gsap.to(randomNode, {
+            radius: originalRadius * 2,
+            duration: 0.5,
+            ease: "power2.out",
+            yoyo: true,
+            repeat: 1,
+            onComplete: () => {
+              randomNode.radius = originalRadius;
+            }
+          });
+        }
+        gsap.delayedCall(Math.random() * 2 + 0.5, pulseRandomNode);
+      }
+      pulseRandomNode();
+    })();
+
+    // ===== STAGGER IN CHART BARS =====
+    gsap.from('.chart-row .bar', {
+      scaleY: 0,
+      transformOrigin: "bottom",
+      duration: 0.6,
+      stagger: 0.05,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: '.card-attendance',
+        start: "top 80%"
+      }
+    });
+
+    // ===== MINI BARS ANIMATION =====
+    gsap.from('.mini-bar', {
+      scaleY: 0,
+      transformOrigin: "bottom",
+      duration: 0.5,
+      stagger: 0.08,
+      ease: "back.out(1.5)",
+      scrollTrigger: {
+        trigger: '.training-chart',
+        start: "top 80%"
+      }
+    });
+
+    // ===== BLOCKED SITES BARS ANIMATION =====
+    const blockedBars = document.querySelectorAll('.blocked-bar');
+    const blockedValues = document.querySelectorAll('.blocked-value');
+
+    if (blockedBars.length > 0) {
+      ScrollTrigger.create({
+        trigger: '.card-blocked',
+        start: "top 80%",
+        onEnter: () => {
+          // Animate bars
+          blockedBars.forEach((bar, i) => {
+            const targetWidth = bar.dataset.width;
+            gsap.to(bar, {
+              width: targetWidth + '%',
+              duration: 1,
+              delay: i * 0.15,
+              ease: "power2.out"
+            });
+          });
+
+          // Animate counter values
+          blockedValues.forEach((val, i) => {
+            const targetValue = parseInt(val.dataset.value);
+            const counter = { value: 0 };
+            gsap.to(counter, {
+              value: targetValue,
+              duration: 1,
+              delay: i * 0.15,
+              ease: "power2.out",
+              onUpdate: () => {
+                val.textContent = Math.round(counter.value);
+              }
+            });
+          });
+        },
+        once: true
+      });
+    }
+  </script>
+
+</body>
+
+</html>

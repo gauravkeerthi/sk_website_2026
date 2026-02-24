@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | StrongKeep</title>
+  <meta name="description" content="How StrongKeep collects and protects your data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400;1,9..40,500&family=DM+Serif+Display:ital@0;1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+  <!-- FULL-SCREEN NETWORK BACKGROUND -->
+  <div class="network-bg">
+    <canvas id="networkCanvas"></canvas>
+  </div>
+
+  <div class="page-wrapper">
+
+    <!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a href="/" class="nav-logo" style="justify-content: center;">
+      <img src="/assets/images/strongkeep.png" alt="StrongKeep Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/features/" class="">Features</a></li>
+      <li class="has-dropdown ">
+        <a href="/solutions/" class="dropdown-trigger">Solutions <svg class="dropdown-arrow" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-column">
+            <h6>Industry</h6>
+            <ul>
+              <li><a href="/solutions/healthcare-clinics/">Healthcare Clinics</a></li>
+              <li><a href="/solutions/professional-services/">Professional Services</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-column">
+            <h6>Use Cases</h6>
+            <ul>
+              <li><a href="/solutions/protection-assurance/">Protection Assurance</a></li>
+              <li><a href="/solutions/compliance-readiness/">Compliance Readiness</a></li>
+              <li><a href="/solutions/starting-your-cybersecurity-journey/">Starting Your Cybersecurity Journey</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="/pricing/" class="">Pricing</a></li>
+      <li class="has-dropdown ">
+        <a href="#" class="dropdown-trigger">Resources <svg class="dropdown-arrow" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9" />
+          </svg></a>
+        <div class="dropdown-menu dropdown-menu-single">
+          <ul>
+            <li><a href="/news-updates/">News & Updates</a></li>
+            <li><a href="/faq/">Frequently Asked Questions</a></li>
+            <li><a href="https://help.strongkeep.com" target="_blank" rel="noopener">Help Center</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="/about/" class="">About</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://app.strongkeep.com/login" class="btn-signin">Log in</a>
+      <a href="https://app.strongkeep.com/register" class="btn-demo">Sign up</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/" class="nav-logo">
+    <img src="/assets/images/strongkeep.svg" alt="StrongKeep Logo">
+  </a>
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&times;</button>
+  <ul class="mobile-menu-links">
+    <li><a href="/features/">Features</a></li>
+    <li class="mobile-has-dropdown">
+      <button class="mobile-dropdown-trigger">Solutions <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg></button>
+      <div class="mobile-dropdown-content">
+        <h6>Industry</h6>
+        <ul>
+          <li><a href="/solutions/healthcare-clinics/">Healthcare Clinics</a></li>
+          <li><a href="/solutions/professional-services/">Professional Services</a></li>
+        </ul>
+        <h6>Use Cases</h6>
+        <ul>
+          <li><a href="/solutions/protection-assurance/">Protection Assurance</a></li>
+          <li><a href="/solutions/compliance-readiness/">Compliance Readiness</a></li>
+          <li><a href="/solutions/starting-your-cybersecurity-journey/">Starting Your Cybersecurity Journey</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="/pricing/">Pricing</a></li>
+    <li class="mobile-has-dropdown">
+      <button class="mobile-dropdown-trigger">Resources <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9" />
+        </svg></button>
+      <div class="mobile-dropdown-content">
+        <ul>
+          <li><a href="/news-updates/">News & Updates</a></li>
+          <li><a href="/faq/">Frequently Asked Questions</a></li>
+          <li><a href="https://help.strongkeep.com" target="_blank" rel="noopener">Help Center</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+  <div class="mobile-menu-actions">
+    <a href="https://app.strongkeep.com/login" class="btn-signin">Log in</a>
+    <a href="https://app.strongkeep.com/register" class="btn-demo">Sign up</a>
+  </div>
+</div>
+
+
+    
+<!-- Page content will go here -->
+
+
+    <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-card">
+    <!-- Header with logo and social -->
+    <div class="footer-header">
+      <div class="footer-logo">
+        <img src="/assets/images/strongkeep.png" alt="StrongKeep">
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Links Grid -->
+    <div class="footer-links-grid">
+      <div class="footer-col">
+        <h5>Features</h5>
+        <ul>
+          <li><a href="/features/">Compliance</a></li>
+          <li><a href="/features/">Protection</a></li>
+          <li><a href="/features/">Training</a></li>
+          <li><a href="/features/">Detection</a></li>
+          <li><a href="/features/">Response</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Solutions</h5>
+        <h6>Industry</h6>
+        <ul>
+          <li><a href="/solutions/healthcare-clinics/">Healthcare Clinics</a></li>
+          <li><a href="/solutions/professional-services/">Professional Services</a></li>
+        </ul>
+        <h6>Use Cases</h6>
+        <ul>
+          <li><a href="/solutions/protection-assurance/">Protection Assurance</a></li>
+          <li><a href="/solutions/compliance-readiness/">Compliance Readiness</a></li>
+          <li><a href="/solutions/starting-your-cybersecurity-journey/">Starting a Cybersecurity Journey</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="/news-updates/">News & Updates</a></li>
+          <li><a href="/faq/">Frequently Asked Questions</a></li>
+          <li><a href="https://help.strongkeep.com" target="_blank" rel="noopener">Help Center</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="/about/">About us</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="/partners/">Partners</a></li>
+          <li><a href="/contact-form/">Contact us</a></li>
+          <li><a href="/terms-of-service/">Terms of Service</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright">
+      &copy; 2026 StrongKeep. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<div style="height:50px"></div>
+
+
+  </div>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // ===== MOBILE MENU =====
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+    function openMobileMenu() {
+      mobileMenu.classList.add('active');
+      mobileMenuOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('active');
+      mobileMenuOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.mobile-menu-links a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // ===== MOBILE DROPDOWN TOGGLES =====
+    document.querySelectorAll('.mobile-dropdown-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const parent = trigger.closest('.mobile-has-dropdown');
+        const isActive = parent.classList.contains('active');
+
+        // Close all other dropdowns
+        document.querySelectorAll('.mobile-has-dropdown.active').forEach(dropdown => {
+          if (dropdown !== parent) {
+            dropdown.classList.remove('active');
+          }
+        });
+
+        // Toggle current dropdown
+        parent.classList.toggle('active');
+      });
+    });
+
+    // ===== FLOATING PHOTOS ANIMATION =====
+    document.querySelectorAll('.float-photo').forEach((photo, i) => {
+      gsap.to(photo, {
+        y: -12,
+        duration: 2.5 + (i % 3) * 0.5,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: i * 0.25
+      });
+    });
+
+    // ===== SCROLL TRIGGERED ANIMATIONS =====
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      gsap.set(el, { opacity: 0, y: 30 }); // Ensure initial state is set by GSAP
+
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 85%",
+        once: true,
+        onEnter: () => {
+          gsap.to(el, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out"
+          });
+        }
+      });
+    });
+
+    // ===== NAVBAR ENTRANCE =====
+    gsap.from('.navbar-inner', {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      delay: 0.2
+    });
+
+    // ===== HERO ENTRANCE ANIMATION =====
+    const heroTl = gsap.timeline({ delay: 0.5 });
+    heroTl.from('.hero h1', {
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    })
+      .from('.hero p', {
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out"
+      }, "-=0.5")
+      .from('.btn-hero', {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.6,
+        ease: "back.out(1.7)"
+      }, "-=0.4")
+      .from('.tiny', {
+        scale: 0.8,
+        opacity: 0,
+        duration: 0.6,
+        ease: "back.out(1.7)"
+      }, "-=0.4");
+
+    // ===== INSIGHT PILL ROTATOR =====
+    const insightPill = document.getElementById('insightPill');
+    if (insightPill) {
+      const insights = [
+        { text: 'Basic Cyber Awareness', color: 'dot-cyan', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>' },
+        { text: 'Spot Signs of Phishing', color: 'dot-red', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>' },
+        { text: 'Crisis Preparation', color: 'dot-cyan', icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>' },
+      ];
+      let insightIdx = 0;
+      gsap.set(insightPill, { force3D: true });
+
+      setInterval(() => {
+        insightIdx = (insightIdx + 1) % insights.length;
+        const text = document.getElementById('insightText');
+        const dot = insightPill.querySelector('.dot');
+
+        gsap.to(insightPill, {
+          opacity: 0,
+          y: -10,
+          duration: 0.3,
+          ease: "power2.in",
+          onComplete: () => {
+            text.textContent = insights[insightIdx].text;
+            dot.className = 'dot ' + insights[insightIdx].color;
+            dot.innerHTML = insights[insightIdx].icon;
+            gsap.fromTo(insightPill,
+              { opacity: 0, y: 10 },
+              { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
+            );
+          }
+        });
+      }, 3000);
+    }
+
+    // ===== LOGO CAROUSEL =====
+    // Only run if integrations section exists
+    const logoName = document.getElementById('logoName');
+    const logoDesc = document.getElementById('logoDesc');
+    if (logoName && logoDesc) {
+      const logoCards = document.querySelectorAll('.logo-card');
+      const logoLabel = document.getElementById('logoLabel');
+      let activeLogoIdx = 2;
+
+      function setActiveLogo(idx, animate = true) {
+        activeLogoIdx = idx;
+        const card = logoCards[idx];
+
+        if (animate) {
+          gsap.to(logoLabel, {
+            opacity: 0,
+            y: 10,
+            duration: 0.2,
+            ease: "power2.in",
+            onComplete: () => {
+              logoName.textContent = card.dataset.name;
+              logoDesc.textContent = card.dataset.desc;
+              gsap.to(logoLabel, {
+                opacity: 1,
+                y: 0,
+                duration: 0.3,
+                ease: "power2.out"
+              });
+            }
+          });
+        } else {
+          logoName.textContent = card.dataset.name;
+          logoDesc.textContent = card.dataset.desc;
+        }
+      }
+
+      logoCards.forEach((card, i) => {
+        card.addEventListener('mouseenter', () => {
+          setActiveLogo(i);
+          gsap.to(card, {
+            scale: 1.15,
+            y: -15,
+            rotation: 0,
+            duration: 0.4,
+            ease: "power2.out"
+          });
+        });
+        card.addEventListener('mouseleave', () => {
+          const rotations = [-12, -6, 0, 6, 12];
+          const yOffsets = [20, -5, -15, -5, 20];
+          gsap.to(card, {
+            scale: i === 2 ? 1.15 : 1,
+            y: yOffsets[i],
+            rotation: rotations[i],
+            duration: 0.4,
+            ease: "power2.out"
+          });
+        });
+      });
+
+      let logoInterval = setInterval(() => {
+        activeLogoIdx = (activeLogoIdx + 1) % logoCards.length;
+        setActiveLogo(activeLogoIdx);
+      }, 3000);
+
+      const logosCarousel = document.getElementById('logosCarousel');
+      if (logosCarousel) {
+        logosCarousel.addEventListener('mouseenter', () => clearInterval(logoInterval));
+        logosCarousel.addEventListener('mouseleave', () => {
+          logoInterval = setInterval(() => {
+            activeLogoIdx = (activeLogoIdx + 1) % logoCards.length;
+            setActiveLogo(activeLogoIdx);
+          }, 3000);
+        });
+      }
+    } // End of logo carousel if block
+
+
+    // ===== FEATURE CARDS HOVER EFFECTS =====
+    document.querySelectorAll('.feature-card').forEach(card => {
+      // Set initial state for GPU acceleration
+      gsap.set(card, { force3D: true, willChange: "transform" });
+
+      card.addEventListener('mouseenter', () => {
+        gsap.to(card, {
+          y: -8,
+          duration: 0.35,
+          ease: "power2.out",
+          overwrite: "auto"
+        });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, {
+          y: 0,
+          duration: 0.35,
+          ease: "power2.out",
+          overwrite: "auto"
+        });
+      });
+    });
+
+    // ===== BUTTON HOVER EFFECTS =====
+    document.querySelectorAll('.btn-hero, .btn-purple, .btn-demo').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        gsap.to(btn, { y: -2, scale: 1.02, duration: 0.25, ease: "power2.out" });
+      });
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { y: 0, scale: 1, duration: 0.25, ease: "power2.out" });
+      });
+    });
+
+    // ===== TEAM FACES ORBIT ANIMATION =====
+    document.querySelectorAll('.team-face').forEach((face, i) => {
+      gsap.set(face, { force3D: true });
+      gsap.to(face, {
+        y: "+=5",
+        duration: 1.5 + (i * 0.2),
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: i * 0.15
+      });
+    });
+
+    // ===== INSIGHTS ORBIT PULSE =====
+    gsap.set('.insights-orbit', { force3D: true });
+    gsap.to('.insights-orbit', {
+      scale: 1.05,
+      opacity: 0.7,
+      duration: 2,
+      ease: "sine.inOut",
+      repeat: -1,
+      yoyo: true
+    });
+
+    // ===== LEGAL DOCS SHUFFLE =====
+    document.querySelectorAll('.legal-doc').forEach((doc, i) => {
+      gsap.set(doc, { force3D: true });
+      gsap.to(doc, {
+        rotation: `+=${(i - 1) * 2}`,
+        y: "+=3",
+        duration: 2 + i * 0.3,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        delay: i * 0.2
+      });
+    });
+
+    // ===== NAV LINKS HOVER =====
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        gsap.to(link, { backgroundColor: "rgba(245,245,247,1)", color: "#111", duration: 0.25, ease: "power2.out" });
+      });
+      link.addEventListener('mouseleave', () => {
+        gsap.to(link, { backgroundColor: "rgba(245,245,247,0)", color: "#5A5B60", duration: 0.25, ease: "power2.out" });
+      });
+    });
+
+    // ===== SIGN IN BUTTON HOVER =====
+    document.querySelectorAll('.btn-signin').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        gsap.to(btn, { borderColor: "#9B9CA1", duration: 0.2, ease: "power2.out" });
+      });
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { borderColor: "#E8E9ED", duration: 0.2, ease: "power2.out" });
+      });
+    });
+
+    // ===== SOCIAL ICONS HOVER =====
+    document.querySelectorAll('.social-icon').forEach(icon => {
+      icon.addEventListener('mouseenter', () => {
+        gsap.to(icon, { backgroundColor: "#7A7B80", color: "#fff", scale: 1.1, duration: 0.25, ease: "power2.out" });
+      });
+      icon.addEventListener('mouseleave', () => {
+        gsap.to(icon, { backgroundColor: "#E8E9ED", color: "#111", scale: 1, duration: 0.25, ease: "power2.out" });
+      });
+    });
+
+    // ===== FOOTER LINKS HOVER =====
+    document.querySelectorAll('.footer-col ul li a').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        gsap.to(link, { color: "#1E3C72", x: 3, duration: 0.2, ease: "power2.out" });
+      });
+      link.addEventListener('mouseleave', () => {
+        gsap.to(link, { color: "#111", x: 0, duration: 0.2, ease: "power2.out" });
+      });
+    });
+
+    // ===== FULL-SCREEN NETWORK ANIMATION =====
+    (function () {
+      const canvas = document.getElementById('networkCanvas');
+      const ctx = canvas.getContext('2d');
+      let nodes = [];
+      const nodeCount = 50;
+      const connectionDistance = 180;
+      let dpr = 1;
+      let canvasWidth = 0;
+      let canvasHeight = 0;
+
+      // Colors
+      const colors = {
+        lineGrey: 'rgba(120, 120, 130, 0.15)',
+        lineRed: 'rgba(232, 80, 58, 0.12)',
+        nodeBlue: 'rgba(30, 60, 114, 0.6)',
+        nodeRed: 'rgba(232, 80, 58, 0.5)'
+      };
+
+      function resize() {
+        dpr = window.devicePixelRatio || 1;
+        canvasWidth = window.innerWidth;
+        canvasHeight = window.innerHeight;
+
+        // Set display size
+        canvas.style.width = canvasWidth + 'px';
+        canvas.style.height = canvasHeight + 'px';
+
+        // Set actual size in memory (scaled for retina)
+        canvas.width = canvasWidth * dpr;
+        canvas.height = canvasHeight * dpr;
+
+        // Scale context to match
+        ctx.scale(dpr, dpr);
+      }
+
+      function createNodes() {
+        nodes = [];
+        for (let i = 0; i < nodeCount; i++) {
+          const isRed = Math.random() > 0.7;
+          nodes.push({
+            x: Math.random() * canvasWidth,
+            y: Math.random() * canvasHeight,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            radius: Math.random() * 4 + 2,
+            color: isRed ? colors.nodeRed : colors.nodeBlue,
+            lineColor: isRed ? colors.lineRed : colors.lineGrey
+          });
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        // Update and draw nodes
+        nodes.forEach((node, i) => {
+          // Update position
+          node.x += node.vx;
+          node.y += node.vy;
+
+          // Bounce off edges
+          if (node.x < 0 || node.x > canvasWidth) node.vx *= -1;
+          if (node.y < 0 || node.y > canvasHeight) node.vy *= -1;
+
+          // Keep in bounds
+          node.x = Math.max(0, Math.min(canvasWidth, node.x));
+          node.y = Math.max(0, Math.min(canvasHeight, node.y));
+
+          // Draw connections to nearby nodes
+          for (let j = i + 1; j < nodes.length; j++) {
+            const other = nodes[j];
+            const dx = other.x - node.x;
+            const dy = other.y - node.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < connectionDistance) {
+              const opacity = 1 - (distance / connectionDistance);
+              ctx.beginPath();
+              ctx.moveTo(node.x, node.y);
+              ctx.lineTo(other.x, other.y);
+              // Alternate line colors
+              const lineColor = (i + j) % 3 === 0 ? colors.lineRed : colors.lineGrey;
+              ctx.strokeStyle = lineColor.replace(/[\d.]+\)$/, (opacity * 0.3) + ')');
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+
+          // Draw node
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+          ctx.fillStyle = node.color;
+          ctx.fill();
+        });
+
+        requestAnimationFrame(animate);
+      }
+
+      // Initialize
+      resize();
+      createNodes();
+      animate();
+
+      // Handle resize
+      window.addEventListener('resize', () => {
+        resize();
+        createNodes();
+      });
+
+      // GSAP pulse effect on random nodes
+      function pulseRandomNode() {
+        if (nodes.length > 0) {
+          const randomNode = nodes[Math.floor(Math.random() * nodes.length)];
+          const originalRadius = randomNode.radius;
+          gsap.to(randomNode, {
+            radius: originalRadius * 2,
+            duration: 0.5,
+            ease: "power2.out",
+            yoyo: true,
+            repeat: 1,
+            onComplete: () => {
+              randomNode.radius = originalRadius;
+            }
+          });
+        }
+        gsap.delayedCall(Math.random() * 2 + 0.5, pulseRandomNode);
+      }
+      pulseRandomNode();
+    })();
+
+    // ===== STAGGER IN CHART BARS =====
+    gsap.from('.chart-row .bar', {
+      scaleY: 0,
+      transformOrigin: "bottom",
+      duration: 0.6,
+      stagger: 0.05,
+      ease: "back.out(1.7)",
+      scrollTrigger: {
+        trigger: '.card-attendance',
+        start: "top 80%"
+      }
+    });
+
+    // ===== MINI BARS ANIMATION =====
+    gsap.from('.mini-bar', {
+      scaleY: 0,
+      transformOrigin: "bottom",
+      duration: 0.5,
+      stagger: 0.08,
+      ease: "back.out(1.5)",
+      scrollTrigger: {
+        trigger: '.training-chart',
+        start: "top 80%"
+      }
+    });
+
+    // ===== BLOCKED SITES BARS ANIMATION =====
+    const blockedBars = document.querySelectorAll('.blocked-bar');
+    const blockedValues = document.querySelectorAll('.blocked-value');
+
+    if (blockedBars.length > 0) {
+      ScrollTrigger.create({
+        trigger: '.card-blocked',
+        start: "top 80%",
+        onEnter: () => {
+          // Animate bars
+          blockedBars.forEach((bar, i) => {
+            const targetWidth = bar.dataset.width;
+            gsap.to(bar, {
+              width: targetWidth + '%',
+              duration: 1,
+              delay: i * 0.15,
+              ease: "power2.out"
+            });
+          });
+
+          // Animate counter values
+          blockedValues.forEach((val, i) => {
+            const targetValue = parseInt(val.dataset.value);
+            const counter = { value: 0 };
+            gsap.to(counter, {
+              value: targetValue,
+              duration: 1,
+              delay: i * 0.15,
+              ease: "power2.out",
+              onUpdate: () => {
+                val.textContent = Math.round(counter.value);
+              }
+            });
+          });
+        },
+        once: true
+      });
+    }
+  </script>
+
+</body>
+
+</html>
