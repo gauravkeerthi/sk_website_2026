@@ -1,0 +1,5 @@
+{
+  "layout": "base.njk",
+  "permalink": "/case-studies/{{ page.fileSlug }}/",
+  "type": "case-study"
+}

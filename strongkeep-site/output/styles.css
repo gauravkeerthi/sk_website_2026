@@ -190,29 +190,31 @@ a {
   left: 50%;
   transform: translateX(-50%);
   min-width: 420px;
-  background: var(--transparent-80);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
+  background: var(--transparent-80);
   border-radius: 0px 0px 16px 16px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
   padding: 24px 28px;
   display: none;
   z-index: 1000;
-  margin-top: 10px;
+  margin-top: 9px;
+
 }
 
 .dropdown-menu::before {
   content: '';
   position: absolute;
-  top: -8px;
+  top: -12px;
   left: 0;
   right: 0;
-  height: 8px;
+  height: 12px;
 }
 
 .nav-links .has-dropdown:hover .dropdown-menu {
   display: flex;
   gap: 40px;
+
 }
 
 .dropdown-menu-single {
@@ -3782,12 +3784,13 @@ a {
 
 /* ===== NEWS & UPDATES PAGE ===== */
 .news-hero {
-  padding: 120px 60px 80px;
+  padding: 180px 60px 80px;
   text-align: center;
   background-image: url("/assets/images/landing_page_bg.avif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin-top: -60px;
 }
 
 .news-hero h1 {

@@ -9,6 +9,13 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   });
 
+  // Create a collection for case studies, sorted by date (newest first)
+  eleventyConfig.addCollection("caseStudies", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/pages/case-studies/*.njk")
+      .filter(item => item.data.type === "case-study")
+      .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+  });
+
   eleventyConfig.addFilter("activeNav", function (navPath, currentUrl) {
     if (!navPath || !currentUrl) return "";
     if (navPath === "/") return currentUrl === "/" ? "active" : "";
