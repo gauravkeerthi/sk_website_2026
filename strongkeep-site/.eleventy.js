@@ -1,6 +1,7 @@
 module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/public": "/" });
+  eleventyConfig.addPassthroughCopy({ "game": "game" });
 
   // Create a collection for news articles, sorted by date (newest first)
   eleventyConfig.addCollection("news", function(collectionApi) {
